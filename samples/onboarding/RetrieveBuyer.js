@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Retrieve Buyer
+// Sample: Retrieve Buyer
 // Retrieves a buyer by their ID
 
 const tokenPay = new TokenPay.Client({
@@ -9,6 +9,6 @@ const tokenPay = new TokenPay.Client({
   baseUrl: 'http://localhost:8000'
 });
 
-tokenPay.onboarding().retrieveBuyer(4)
+tokenPay.onboarding().retrieveBuyer(1)
   .then(result => console.info('Buyer retrieved', result))
   .catch(err => console.error('Failed to retrieve buyer', err));

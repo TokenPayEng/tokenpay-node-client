@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Search Stored Cards
+// Sample: Search Stored Cards
 // Searches for stored cards
 
 const tokenPay = new TokenPay.Client({

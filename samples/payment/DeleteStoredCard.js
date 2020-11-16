@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Delete Stored Card
+// Sample: Delete Stored Card
 // Deletes a stored card
 
 const tokenPay = new TokenPay.Client({

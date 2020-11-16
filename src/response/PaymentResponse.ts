@@ -8,8 +8,7 @@ import CardType from "../model/CardType"
 import CardAssociation from "../model/CardAssociation"
 import CardPaymentTxResponse from "./CardPaymentTxResponse"
 
-
-type CardPaymentResponse = {
+type PaymentResponse = {
   id: number;
   createdDate: Date;
   price: number;
@@ -38,4 +37,4 @@ type CardPaymentResponse = {
   paymentTransactions: CardPaymentTxResponse[];
 }
 
-export default CardPaymentResponse;
+export default PaymentResponse;

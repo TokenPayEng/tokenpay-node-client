@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Retrieve Installments
+// Sample: Search Installments
 // Given a BIN number, price and currency, retrieves valid installment counts
 
 const tokenPay = new TokenPay.Client({
@@ -10,11 +10,11 @@ const tokenPay = new TokenPay.Client({
 });
 
 const request = {
-  binNumber: '544078',
+  binNumber: '525864',
   price: 100,
   currency: TokenPay.Model.Currency.TRY
 };
 
-tokenPay.installment().retrieveInstallments(request)
-  .then(result => console.info('Retrieved installments', result))
-  .catch(err => console.error('Failed to retrieve installments', err));
+tokenPay.installment().searchInstallments(request)
+  .then(result => console.info('Searched installments', result))
+  .catch(err => console.error('Failed to search installments', err));

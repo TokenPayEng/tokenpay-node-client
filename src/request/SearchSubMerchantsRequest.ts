@@ -1,6 +1,6 @@
 import SubMerchantType from '../model/SubMerchantType';
 
-type UpdateSubMerchantRequest = {
+type SearchSubMerchantsRequest = {
   name?: string;
   subMerchantIds?: number[];
   subMerchantExternalId?: string;
@@ -9,4 +9,4 @@ type UpdateSubMerchantRequest = {
   size?: number;
 };
 
-export default UpdateSubMerchantRequest;
+export default SearchSubMerchantsRequest;

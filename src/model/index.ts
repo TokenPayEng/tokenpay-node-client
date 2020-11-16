@@ -1,4 +1,3 @@
-import AddressType from './AddressType';
 import ApprovalStatus from './ApprovalStatus';
 import CardAssociation from './CardAssociation';
 import CardType from './CardType';
@@ -18,7 +17,6 @@ import SubMerchantType from './SubMerchantType';
 import TransactionStatus from './TransactionStatus';
 
 export = {
-  AddressType,
   ApprovalStatus,
   CardAssociation,
   CardType,

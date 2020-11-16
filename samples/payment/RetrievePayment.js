@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Retrieve Payment
+// Sample: Retrieve Payment
 // Retrieves the payment with ID 1
 
 const tokenPay = new TokenPay.Client({

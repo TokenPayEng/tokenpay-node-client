@@ -1,8 +1,8 @@
 import PaymentStatus from '../model/PaymentStatus'
 import Currency from '../model/Currency'
 
-type SearchPaymentRequest = {
-  
+type SearchPaymentsRequest = {
+
   page?: number;
   size?: number;
 
@@ -29,4 +29,4 @@ type SearchPaymentRequest = {
   maxCreatedDate?: Date;
 };
 
-export default SearchPaymentRequest;
+export default SearchPaymentsRequest;

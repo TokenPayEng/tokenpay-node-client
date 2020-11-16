@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Refund Payment Tx
+// Sample: Refund Payment Tx
 
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',

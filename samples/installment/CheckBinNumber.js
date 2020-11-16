@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Check BIN Number
+// Sample: Check BIN Number
 // Retrieves information about a BIN number
 
 const tokenPay = new TokenPay.Client({
@@ -9,6 +9,6 @@ const tokenPay = new TokenPay.Client({
   baseUrl: 'http://localhost:8000'
 });
 
-tokenPay.installment().checkBinNumber('544078')
+tokenPay.installment().checkBinNumber('525864')
   .then(result => console.info('Retrieved BIN number information', result))
   .catch(err => console.error('Failed to retrieve BIN number information', err));

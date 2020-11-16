@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Disapprove Payment Tx
+// Sample: Disapprove Payment Tx
 
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',

@@ -3,7 +3,7 @@ import {ClientCreationOptions} from '../lib/HttpClient';
 
 import CreateBuyerRequest from '../request/CreateBuyerRequest';
 import CreateSubMerchantRequest from '../request/CreateSubMerchantRequest';
-import SearchSubMerchantRequest from '../request/SearchSubMerchantRequest';
+import SearchSubMerchantRequest from '../request/SearchSubMerchantsRequest';
 import UpdateBuyerRequest from '../request/UpdateBuyerRequest';
 import UpdateSubMerchantRequest from '../request/UpdateSubMerchantRequest';
 

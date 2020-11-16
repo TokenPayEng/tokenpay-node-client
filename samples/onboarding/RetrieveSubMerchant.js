@@ -1,7 +1,7 @@
 const TokenPay = require('../../dist');
 
-// Example: Retrieve Submerchant
-// Retrieves a submerchant by their ID
+// Sample: Retrieve Sub merchant
+// Retrieves a sub merchant by their ID
 
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
@@ -9,6 +9,6 @@ const tokenPay = new TokenPay.Client({
   baseUrl: 'http://localhost:8000'
 });
 
-tokenPay.onboarding().retrieveSubMerchant(7)
-  .then(result => console.info('Retrieved submerchant', result))
-  .catch(err => console.error('Failed to retrieve submerchant', err));
+tokenPay.onboarding().retrieveSubMerchant(1)
+  .then(result => console.info('Retrieved sub merchant', result))
+  .catch(err => console.error('Failed to retrieve sub merchant', err));

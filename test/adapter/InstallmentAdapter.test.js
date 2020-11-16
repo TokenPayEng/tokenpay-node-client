@@ -43,8 +43,8 @@ test('should retrieve installments', async t => {
     price: 40.8080,
     currency: 'TRY'
   };
-  
-  const result = await installmentAdapter.retrieveInstallments(request)
+
+  const result = await installmentAdapter.searchInstallments(request)
   t.is(result.binNumber, '123456')
   t.is(result.price, 40.8080)
   t.is(result.cardType, 'CREDIT_CARD')
@@ -72,7 +72,7 @@ test('should check bin number', async t => {
       commercial: true
     }
   });
-  
+
   const result = await installmentAdapter.checkBinNumber('123456')
   t.is(result.binNumber, '123456')
   t.is(result.cardType, 'CREDIT_CARD')

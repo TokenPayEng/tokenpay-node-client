@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Send Money
+// Sample: Send Money
 // Sends a particular amount of money to a given submerchant
 
 const tokenPay = new TokenPay.Client({
@@ -10,7 +10,7 @@ const tokenPay = new TokenPay.Client({
 });
 
 const request = {
-  reason: 'Ön Anlaşma Bonusu',
+  reason: 'Ön Anlaşma Bonusu', // todo
   price: 100,
   currency: TokenPay.Model.Currency.TRY,
   subMerchantId: 3

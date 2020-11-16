@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Init 3DS Payment
+// Sample: Init 3DS Payment
 
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
@@ -17,15 +17,15 @@ const request = {
   currency: 'TRY',
   paymentGroup: 'Product',
   card: {
-    cardHolderName: 'Berkay Dinçer',
-    cardNumber: '5406670000000009',
-    expireYear: '2035',
+    cardHolderName: 'Berkay Dinçer', // todo
+    cardNumber: '5406670000000009', // todo
+    expireYear: '2044',
     expireMonth: '11',
     cvc: '123'
   },
   items: [
     {
-      name: 'Pharmaton',
+      name: 'Pharmaton', // todo
       price: 30.0,
       subMerchantId: 1,
       subMerchantPrice: 27.0

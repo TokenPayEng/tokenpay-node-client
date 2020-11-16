@@ -1,6 +1,6 @@
 import RefundDestinationType from '../model/RefundDestinationType'
 
-type CreateRefundTxRequest = {
+type CreateRefundTxRequest = { // todo CreatePaymentTxRefundRequest
   paymentTransactionId: number;
   conversationId: string;
   refundPrice: number;

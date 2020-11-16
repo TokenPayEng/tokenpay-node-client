@@ -4,7 +4,7 @@ type BuyerResponse = {
   id: number;
   status: Status;
   email: string;
-  tckn: string;
+  identityNumber: string;
   name: string;
   surname: string;
   gsmNumber: string;

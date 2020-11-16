@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Search Payments
+// Sample: Search Payments
 // Searches for payments with IDs 1, 2, and 99999
 
 const tokenPay = new TokenPay.Client({

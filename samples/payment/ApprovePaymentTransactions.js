@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Approve Payment Tx
+// Sample: Approve Payment Tx
 
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
@@ -9,7 +9,7 @@ const tokenPay = new TokenPay.Client({
 });
 
 const request = {
-  paymentTransactionIds: [100,101],
+  paymentTransactionIds: [1, 2],
   isTransactional: false
 };
 

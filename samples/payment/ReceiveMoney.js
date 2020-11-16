@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Cancel Cross-booking
+// Sample: Cancel Cross-booking
 // Cancels a cross-booking operation by its ID
 
 const tokenPay = new TokenPay.Client({

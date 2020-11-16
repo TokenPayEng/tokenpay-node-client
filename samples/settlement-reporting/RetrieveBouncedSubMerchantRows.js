@@ -1,7 +1,7 @@
 const TokenPay = require('../../dist');
 
-// Example: Retrieve Bounced Submerchant Rows
-// Retrieves bounced settlement rows of submerchants
+// Sample: Retrieve Bounced Sub merchant Rows
+// Retrieves bounced settlement rows of sub merchants
 
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',

@@ -1,7 +1,6 @@
 enum Status {
   Active = 'ACTIVE',
-  Passive = 'PASSIVE',
-  Deleted = 'DELETED'
+  Passive = 'PASSIVE'
 };
 
 export default Status;

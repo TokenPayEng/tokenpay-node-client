@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Refund Payment Tx
+// Sample: Refund Payment Tx
 
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
@@ -12,7 +12,7 @@ const request = {
   paymentTransactionId: 1,
   conversationId: '9d43edb0-f141-4f14-8e99-57126f941fde',
   refundPrice: 20,
-  refundDestinationType: 'CARD'
+  refundDestinationType: 'CARD' // todo
 };
 
 tokenPay.payment().refundPaymentTransaction(request)

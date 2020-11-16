@@ -1,9 +1,9 @@
 import Currency from '../model/Currency';
 
-type InstallmentSearchRequest = {
+type SearchInstallmentsRequest = {
   binNumber: string;
   price: number;
   currency: Currency;
 };
 
-export default InstallmentSearchRequest;
+export default SearchInstallmentsRequest;

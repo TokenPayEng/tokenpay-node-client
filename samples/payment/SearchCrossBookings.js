@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Search Cross-bookings
+// Sample: Search Cross-bookings
 // Searches for cross-bookings that match the given criteria
 
 const tokenPay = new TokenPay.Client({

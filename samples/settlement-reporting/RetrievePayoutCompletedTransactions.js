@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Retrieve Payout Completed Transactions
+// Sample: Retrieve Payout Completed Transactions
 // Retrieves settlement rows for transactions that have been paid out
 
 const tokenPay = new TokenPay.Client({

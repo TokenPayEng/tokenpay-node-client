@@ -1,6 +1,6 @@
 const TokenPay = require('../../dist');
 
-// Example: Complete 3DS Payment
+// Sample: Complete 3DS Payment
 
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
