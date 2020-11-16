@@ -1,7 +1,7 @@
 const TokenPay = require('../../dist');
 
-// Example: Receive Money
-// Receives a particular amount of money from a given submerchant
+// Example: Cancel Cross-booking
+// Cancels a cross-booking operation by its ID
 
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
@@ -10,12 +10,9 @@ const tokenPay = new TokenPay.Client({
 });
 
 const request = {
-  reason: 'İşgaliye Harcı',
-  price: 100,
-  currency: TokenPay.Model.Currency.TRY,
-  subMerchantId: 3
+  crossBookingId: 17
 };
 
-tokenPay.payment().receiveMoney(request)
-  .then(result => console.info('Successfully received money', result))
-  .catch(err => console.error('Failed to receive money', err));
+tokenPay.payment().cancelCrossBooking(request)
+  .then(result => console.info('Successfully cancelled cross-booking', result))
+  .catch(err => console.error('Failed to cancel cross-booking', err));
