@@ -1,6 +1,8 @@
-type ConvertedPaymentTxPayout = {
+import Currency from "./../../model/Currency";
+
+type Payout = {
   paidPrice: number;
-  currency: string;
+  currency: Currency;
   merchantPayoutAmount: number;
   subMerchantPayoutAmount: number;
   pfCommissionRateAmount: number;
@@ -8,4 +10,4 @@ type ConvertedPaymentTxPayout = {
   pfConversionRateAmount: number;
 }
 
-export default ConvertedPaymentTxPayout;
+export default Payout;

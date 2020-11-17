@@ -1,15 +1,16 @@
-export type CreditCard = {
+export type PaymentCard = {
+  cardAlias?: string;
   cardHolderName: string;
   cardNumber: string;
   expireYear: string;
   expireMonth: string;
   cvc: string;
+  storeCardAfterSuccessPayment?: boolean;
 };
 
 export type StoredCard = {
-  cardAlias: string;
   cardUserKey: string;
   cardToken: string;
 };
 
-export type Card = CreditCard | StoredCard;
+export type Card = PaymentCard | StoredCard;

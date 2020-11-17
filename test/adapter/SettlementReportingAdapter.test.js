@@ -9,7 +9,7 @@ const settlementReportingAdapter = new TokenPay.Adapter.SettlementReportingAdapt
   baseUrl: 'http://localhost:8000'
 });
 
-test('retrieveBouncedSubMerchantRows() should retrieve bounced settlement rows for submerchants', async t => {
+test('retrieveBouncedSubMerchantRows() should retrieve bounced settlement rows for sub merchants', async t => {
   const startDate = new Date(Date.parse('2020-09-11 08:00:00+03:00'));
   const endDate = new Date(Date.parse('2020-09-12 08:00:00+03:00'));
 

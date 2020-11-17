@@ -1,7 +1,7 @@
 import Currency from '../model/Currency';
 
 type SearchInstallmentsRequest = {
-  binNumber: string;
+  binNumber?: string;
   price: number;
   currency: Currency;
 };

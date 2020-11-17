@@ -1,28 +1,25 @@
 const TokenPay = require('../../dist');
 
-// Sample: Create Payment
-// Creates a payment with a paid price of 100.0 TRY
-
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 const request = {
   price: 100.0,
   paidPrice: 100.0,
   walletPrice: 0.0,
-  installment: 2,
-  conversationId: 'foo-bar', // todo
+  installment: 1,
+  conversationId: '456d1297-908e-4bd6-a13b-4be31a6e47d5',
   currency: TokenPay.Model.Currency.TRY,
   paymentGroup: TokenPay.Model.PaymentGroup.Product,
   card: {
-    cardHolderName: 'Ahmet Mehmet', // todo
+    cardHolderName: 'Haluk Demir',
     cardNumber: '5258640000000001',
     expireYear: '2044',
-    expireMonth: '11',
-    cvc: '123'
+    expireMonth: '07',
+    cvc: '000'
   },
   items: [
     {

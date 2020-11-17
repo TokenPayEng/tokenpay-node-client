@@ -1,9 +1,10 @@
 import RefundStatus from '../model/RefundStatus'
 import RefundType from '../model/RefundType'
 import RefundDestinationType from '../model/RefundDestinationType'
-import RefundTxResponse from '../response/RefundTxResponse';
+import PaymentTransactionRefundResponse from '../response/PaymentTransactionRefundResponse';
+import Currency from '../model/Currency';
 
-export type RefundPaymentResponse = {
+type PaymentRefundResponse = {
   id: number;
   conversationId: string;
   createdDate: Date;
@@ -13,9 +14,9 @@ export type RefundPaymentResponse = {
   refundWalletPrice: number;
   refundType: RefundType;
   refundDestinationType: RefundDestinationType;
-  currency: string;
+  currency: Currency;
   paymentId: number;
-  paymentTxRefunds: RefundTxResponse[];
+  paymentTxRefunds: PaymentTransactionRefundResponse[];
 };
 
-export default RefundPaymentResponse;
+export default PaymentRefundResponse;

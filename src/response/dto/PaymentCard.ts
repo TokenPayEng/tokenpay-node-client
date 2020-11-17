@@ -1,9 +1,9 @@
 import CardType from '../../model/CardType'
 import CardAssociation from '../../model/CardAssociation'
 import Installment from '../../model/Installment'
-import ErrorDto from './ErrorDto'
+import Error from './Error'
 
-export type CreditCard = {
+type PaymentCard = {
   cardType: CardType;
   cardAssociation: CardAssociation;
   cardBrand: string;
@@ -16,7 +16,7 @@ export type CreditCard = {
   pfCommissionRateAmount: number;
   merchantCommissionRate: number;
   merchantCommissionRateAmount: number;
-  error: ErrorDto;
+  error: Error;
 };
 
-export default CreditCard;
+export default PaymentCard;

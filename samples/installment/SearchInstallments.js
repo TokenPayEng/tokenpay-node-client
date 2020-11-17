@@ -1,12 +1,9 @@
 const TokenPay = require('../../dist');
 
-// Sample: Search Installments
-// Given a BIN number, price and currency, retrieves valid installment counts
-
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 const request = {
@@ -16,5 +13,5 @@ const request = {
 };
 
 tokenPay.installment().searchInstallments(request)
-  .then(result => console.info('Searched installments', result))
+  .then(result => console.info('Search installments', result))
   .catch(err => console.error('Failed to search installments', err));

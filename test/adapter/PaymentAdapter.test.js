@@ -957,10 +957,10 @@ test('should search stored cards', async t => {
           id: 1,
           cardUserKey: 'de050909-39a9-473c-a81a-f186dd55cfef',
           cardToken: 'f13129c4-55b2-4055-8c94-60c0d8c51a3b',
-          binNumber: 402277,
-          lastFourDigits: 4026,
-          expireYear: 2030,
-          expireMonth: 10,
+          binNumber: '402277',
+          lastFourDigits: '4026',
+          expireYear: '2030',
+          expireMonth: '10',
           cardHolderName: 'Berkay Dincer',
           cardAlias: 'test card',
           cardType: 'CREDIT_CARD',
@@ -972,10 +972,10 @@ test('should search stored cards', async t => {
           id: 2,
           cardUserKey: 'ee050909-39a9-473c-a81a-f186dd55cfed',
           cardToken: 'fa3129c4-55b2-4055-8c94-60c0d8c51a3e',
-          binNumber: 402276,
-          lastFourDigits: 4025,
-          expireYear: 2029,
-          expireMonth: 09,
+          binNumber: '402276',
+          lastFourDigits: '4025',
+          expireYear: '2029',
+          expireMonth: '09',
           cardHolderName: 'Berkay Dincer 2',
           cardAlias: 'test card 2',
           cardType: 'CREDIT_CARD',
@@ -997,10 +997,10 @@ test('should search stored cards', async t => {
   t.is(result.items[0].id, 1)
   t.is(result.items[0].cardUserKey,'de050909-39a9-473c-a81a-f186dd55cfef')
   t.is(result.items[0].cardToken, 'f13129c4-55b2-4055-8c94-60c0d8c51a3b')
-  t.is(result.items[0].binNumber, 402277)
-  t.is(result.items[0].lastFourDigits, 4026)
-  t.is(result.items[0].expireYear, 2030)
-  t.is(result.items[0].expireMonth, 10)
+  t.is(result.items[0].binNumber, '402277')
+  t.is(result.items[0].lastFourDigits, '4026')
+  t.is(result.items[0].expireYear, '2030')
+  t.is(result.items[0].expireMonth, '10')
   t.is(result.items[0].cardHolderName,'Berkay Dincer')
   t.is(result.items[0].cardAlias,'test card')
   t.is(result.items[0].cardType,'CREDIT_CARD')
@@ -1011,10 +1011,10 @@ test('should search stored cards', async t => {
   t.is(result.items[1].id, 2)
   t.is(result.items[1].cardUserKey,'ee050909-39a9-473c-a81a-f186dd55cfed')
   t.is(result.items[1].cardToken, 'fa3129c4-55b2-4055-8c94-60c0d8c51a3e')
-  t.is(result.items[1].binNumber, 402276)
-  t.is(result.items[1].lastFourDigits, 4025)
-  t.is(result.items[1].expireYear, 2029)
-  t.is(result.items[1].expireMonth, 09)
+  t.is(result.items[1].binNumber, '402276')
+  t.is(result.items[1].lastFourDigits, '4025')
+  t.is(result.items[1].expireYear, '2029')
+  t.is(result.items[1].expireMonth, '09')
   t.is(result.items[1].cardHolderName,'Berkay Dincer 2')
   t.is(result.items[1].cardAlias,'test card 2')
   t.is(result.items[1].cardType,'CREDIT_CARD')

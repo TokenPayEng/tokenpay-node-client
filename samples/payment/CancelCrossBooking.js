@@ -1,16 +1,13 @@
 const TokenPay = require('../../dist');
 
-// Example: Cancel Cross-booking
-// Cancels a cross-booking operation by its ID
-
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 const request = {
-  crossBookingId: 17
+  crossBookingId: 1
 };
 
 tokenPay.payment().cancelCrossBooking(request)

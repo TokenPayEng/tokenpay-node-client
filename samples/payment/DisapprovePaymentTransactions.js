@@ -11,6 +11,6 @@ const request = {
   isTransactional: false
 };
 
-tokenPay.payment().approvePaymentTransactions(request)
-  .then(results => console.info('Approve payment transactions response', results))
-  .catch(err => console.error('Failed to approve payment transactions', err));
+tokenPay.payment().disapprovePaymentTransactions(request)
+  .then(results => console.info('Disapprove payment transactions response', results))
+  .catch(err => console.error('Failed to disapprove payment transactions', err));

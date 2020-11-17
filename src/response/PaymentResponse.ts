@@ -6,7 +6,7 @@ import PaymentStatus from "../model/PaymentStatus"
 import PaymentPhase from "../model/PaymentPhase"
 import CardType from "../model/CardType"
 import CardAssociation from "../model/CardAssociation"
-import CardPaymentTxResponse from "./CardPaymentTxResponse"
+import PaymentTransaction from "./dto/PaymentTransaction"
 
 type PaymentResponse = {
   id: number;
@@ -34,7 +34,7 @@ type PaymentResponse = {
   cardType: CardType;
   cardAssociation: CardAssociation;
   cardBrand: string;
-  paymentTransactions: CardPaymentTxResponse[];
+  paymentTransactions: PaymentTransaction[];
 }
 
 export default PaymentResponse;

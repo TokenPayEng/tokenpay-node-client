@@ -1,7 +1,6 @@
 enum MerchantType {
   Merchant = 'MERCHANT',
-  SubMerchant = 'SUB_MERCHANT',
-  PaymentFacilitator = 'PF'
+  SubMerchant = 'SUB_MERCHANT'
 };
 
 export default MerchantType;

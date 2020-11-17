@@ -2,11 +2,11 @@ import CrossBookingTransactionStatus from '../model/CrossBookingTransactionStatu
 import MerchantType from '../model/MerchantType'
 
 type SearchCrossBookingsRequest = {
-  transactionStatus: CrossBookingTransactionStatus;
   sourceMerchantId: number;
-  destinationMerchantId: number;
   sourceMerchantType: MerchantType;
+  destinationMerchantId: number;
   destinationMerchantType: MerchantType;
+  transactionStatus: CrossBookingTransactionStatus;
   page: number;
   size: number;
 };

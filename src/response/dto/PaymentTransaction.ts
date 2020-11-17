@@ -1,7 +1,7 @@
-import TransactionStatus from "../model/TransactionStatus";
-import ConvertedPaymentTxPayout from "./dto/ConvertedPaymentTxPayout";
+import TransactionStatus from "../../model/TransactionStatus";
+import Payout from "./Payout";
 
-type CardPaymentTxResponse = {
+type PaymentTransaction = {
   id: number;
   externalId: string;
   name: string;
@@ -18,7 +18,7 @@ type CardPaymentTxResponse = {
   pfCommissionRateAmount: number;
   transactionStatus: TransactionStatus;
   blockageResolvedDate: Date;
-  convertedPayout: ConvertedPaymentTxPayout;
+  payout: Payout;
 }
 
-export default CardPaymentTxResponse;
+export default PaymentTransaction;

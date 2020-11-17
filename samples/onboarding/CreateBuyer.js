@@ -1,12 +1,9 @@
 const TokenPay = require('../../dist');
 
-// Sample: Create Buyer
-// Creates a buyer
-
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 const request = {

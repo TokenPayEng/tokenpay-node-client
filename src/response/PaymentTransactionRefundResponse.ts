@@ -1,7 +1,7 @@
 import RefundStatus from "../model/RefundStatus";
 import RefundDestinationType from "../model/RefundDestinationType";
 
-type RefundTxResponse = {
+type PaymentTransactionRefundResponse = {
   id: number;
   conversationId: string;
   createdDate: Date;
@@ -16,4 +16,4 @@ type RefundTxResponse = {
   refundDestinationType: RefundDestinationType;
 }
 
-export default RefundTxResponse;
+export default PaymentTransactionRefundResponse;

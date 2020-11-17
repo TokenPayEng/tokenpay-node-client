@@ -1,23 +1,20 @@
-import TokenPayClient from '../../dist/TokenPayClient';
-import CreatePaymentRequest from '../../dist/request/CreatePaymentRequest';
-import PaymentResponse from '../../dist/response/PaymentResponse';
+const TokenPay = require('../../dist');
 
-import {Currency, PaymentGroup} from '../../dist/model';
-
-const tokenPay = new TokenPayClient({
+const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
   baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
-const request: CreatePaymentRequest = {
+const request = {
   price: 100.0,
   paidPrice: 100.0,
   walletPrice: 0.0,
   installment: 1,
   conversationId: '456d1297-908e-4bd6-a13b-4be31a6e47d5',
-  currency: Currency.TRY,
-  paymentGroup: PaymentGroup.Product,
+  currency: TokenPay.Model.Currency.TRY,
+  paymentGroup: TokenPay.Model.PaymentGroup.Product,
+  callbackUrl: "https://www.your-website.com/tokenpay-3DSecure-callback",
   card: {
     cardHolderName: 'Haluk Demir',
     cardNumber: '5258640000000001',
@@ -47,6 +44,6 @@ const request: CreatePaymentRequest = {
   ]
 };
 
-tokenPay.payment().createPayment(request)
-  .then((result: PaymentResponse) => console.info('Payment successful', result))
-  .catch((err: Error) => console.error('Payment failed', err));
+tokenPay.payment().init3DSPayment(request)
+  .then(result => console.info('Init 3ds payment successful', result))
+  .catch(err => console.error('Failed to init 3ds payment', err));

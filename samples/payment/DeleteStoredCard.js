@@ -1,12 +1,9 @@
 const TokenPay = require('../../dist');
 
-// Sample: Delete Stored Card
-// Deletes a stored card
-
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 tokenPay.payment()
@@ -15,4 +12,4 @@ tokenPay.payment()
     cardUserKey: '11a078c4-3c32-4796-90b1-51ee5517a212'
   })
   .then(() => console.info('Stored card deleted'))
-  .catch(err => console.error('Failed to delete stored card', err));;
+  .catch(err => console.error('Failed to delete stored card', err));

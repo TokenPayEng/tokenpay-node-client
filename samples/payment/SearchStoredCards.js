@@ -1,23 +1,21 @@
 const TokenPay = require('../../dist');
 
-// Sample: Search Stored Cards
-// Searches for stored cards
-
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
-tokenPay.payment()
-  .searchStoredCards({
-    cardAlias: '62-Garanti-123',
-    cardBankName: 'Garanti',
-    cardBrand: 'Bonus',
-    cardAssociation: 'VISA',
-    cardToken: '6d882057-d3ac-4ecb-bb9a-72755823d50a',
-    cardUserKey: '10cd1593-a6aa-4180-9a3e-663cfcc61c11',
-    cardType: TokenPay.Model.CardType.CreditCard
-  })
-  .then(results => console.log('Retrieved stored card search results', results))
-  .catch(err => console.err('Failed to delete stored card', err));;
+const request = {
+  cardAlias: 'My YKB Card',
+  cardBankName: 'YAPI VE KREDİ BANKASI A.Ş.',
+  cardBrand: 'World',
+  cardAssociation: TokenPay.Model.CardAssociation.MasterCard,
+  cardToken: 'fac377f2-ab15-4696-88d2-5e71b27ec378',
+  cardUserKey: '11a078c4-3c32-4796-90b1-51ee5517a212',
+  cardType: TokenPay.Model.CardType.CreditCard
+};
+
+tokenPay.payment().searchStoredCards(request)
+  .then(results => console.info('Search stored card search results', results))
+  .catch(err => console.err('Failed to search stored card', err));

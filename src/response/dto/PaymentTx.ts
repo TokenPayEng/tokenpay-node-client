@@ -1,9 +1,9 @@
 import TransactionStatus from '../../model/TransactionStatus'
-import ConvertedPaymentTxPayout from './ConvertedPaymentTxPayout'
+import Payout from './Payout'
 import PaymentTxCard from './PaymentTxCard'
 import PaymentTxRefund from './PaymentTxRefund'
 
-export type PaymentTx = {
+type PaymentTx = {
   id: number;
   createdDate: Date;
   externalId: string;
@@ -18,7 +18,7 @@ export type PaymentTx = {
   subMerchantPrice: number;
   subMerchantPayoutRate: number;
   subMerchantPayoutAmount: number;
-  convertedPayout: ConvertedPaymentTxPayout;
+  payout: Payout;
   paymentTxCard: PaymentTxCard;
   paymentTxRefunds: PaymentTxRefund[];
 };

@@ -1,11 +1,9 @@
 const TokenPay = require('../../dist');
 
-// Sample: Complete 3DS Payment
-
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 const request = {
@@ -13,5 +11,5 @@ const request = {
 };
 
 tokenPay.payment().complete3DSPayment(request)
-  .then(result => console.info('Complete 3DS successful', result))
-  .catch(err => console.error('Complete 3DS failed', err));
+  .then(result => console.info('Complete 3DS payment successful', result))
+  .catch(err => console.error('Failed to complete 3DS payment', err));

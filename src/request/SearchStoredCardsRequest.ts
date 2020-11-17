@@ -1,7 +1,7 @@
 import CardAssociation from '../model/CardAssociation';
 import CardType from '../model/CardType';
 
-type SearchStoredCardRequest = {
+type SearchStoredCardsRequest = {
   cardAlias?: string;
   cardBrand?: string;
   cardType?: CardType;
@@ -13,4 +13,4 @@ type SearchStoredCardRequest = {
   size?: number;
 };
 
-export default SearchStoredCardRequest;
+export default SearchStoredCardsRequest;

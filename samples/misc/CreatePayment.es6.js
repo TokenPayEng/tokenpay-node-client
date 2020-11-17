@@ -3,13 +3,10 @@ import TokenPayClient from '../../dist';
 import Currency from '../../dist/model/Currency';
 import PaymentGroup from '../../dist/model/PaymentGroup';
 
-// Sample: Create Payment (ES6)
-// Creates a payment with a paid price of 100.0 TRY
-
 const tokenPay = new TokenPayClient({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 const request = {
@@ -50,5 +47,5 @@ const request = {
 };
 
 tokenPay.payment().createPayment(request)
-  .then(result => console.log('Payment successful', result))
+  .then(result => console.info('Payment successful', result))
   .catch(err => console.error('Payment failed', err));

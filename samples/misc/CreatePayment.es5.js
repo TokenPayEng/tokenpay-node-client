@@ -1,12 +1,9 @@
 var TokenPay = require('../../dist');
 
-// Sample: Create Payment (ES5)
-// Creates a payment with a paid price of 100.0 TRY
-
 var tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 var request = {
@@ -48,7 +45,7 @@ var request = {
 
 tokenPay.payment().createPayment(request)
   .then(function(result) {
-    console.log('Payment successful', result);
+    console.info('Payment successful', result);
   })
   .catch(function(err) {
     console.error('Payment failed', err);

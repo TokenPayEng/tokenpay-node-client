@@ -1,12 +1,9 @@
 const TokenPay = require('../../dist');
 
-// Sample: Retrieve Bounced Sub merchant Rows
-// Retrieves bounced settlement rows of sub merchants
-
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 const request = {
@@ -14,6 +11,6 @@ const request = {
   endDate: new Date(Date.now() - 24 * 60 * 60 * 1000)
 };
 
-tokenPay.settlementReporting().retrieveBouncedSubMerchantRows(request)
-  .then(result => console.info('Retrieved bounced submerchant settlement rows', result))
-  .catch(err => console.error('Failed to retrieve bounced submerchant settlement rows', err));
+tokenPay.settlementReporting().listBouncedSubMerchantRows(request)
+  .then(result => console.info('Retrieve bounced sub merchant rows', result))
+  .catch(err => console.error('Failed to retrieve bounced sub merchant rows', err));

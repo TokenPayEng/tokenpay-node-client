@@ -1,8 +1,8 @@
 import PaymentStatus from '../model/PaymentStatus'
 import Currency from '../model/Currency'
+import Installment from '../model/Installment';
 
 type SearchPaymentsRequest = {
-
   page?: number;
   size?: number;
 
@@ -21,7 +21,7 @@ type SearchPaymentsRequest = {
   maxPrice?: number;
   maxPaidPrice?: number;
 
-  installment?: number;
+  installment?: Installment;
   conversationId?: string;
   isThreeDS?: boolean;
 
