@@ -6,8 +6,6 @@ const tokenPay = new TokenPay.Client({
   baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
-const id = 1;
-
-tokenPay.payment().retrievePayment(id)
+tokenPay.payment().retrievePayment(1)
   .then(payment => console.info('Payment retrieved', payment))
   .catch(err => console.error('Failed to retrieve payment', err));
