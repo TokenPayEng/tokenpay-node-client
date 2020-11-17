@@ -3,7 +3,7 @@ import RefundStatus from '../../model/RefundStatus'
 import RefundDestinationType from '../../model/RefundDestinationType'
 import Error from './Error'
 
-export type PaymentRefund = {
+type PaymentRefund = {
   id: number;
   createdDate: Date;
   refundStatus: RefundStatus;

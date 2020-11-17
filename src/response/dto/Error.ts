@@ -1,4 +1,4 @@
-export type Error = {
+type Error = {
   errorCode: String;
   errorName: String;
   errorGroup: String;
