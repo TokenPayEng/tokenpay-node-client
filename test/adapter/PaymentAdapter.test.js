@@ -251,7 +251,7 @@ test('should retrive payment', async t => {
   })
 
 
-  const result = await paymentAdapter.retrieve(1)
+  const result = await paymentAdapter.retrievePayment(1)
 
   t.is(result.id, 1)
   t.is(result.price, 100)
@@ -388,7 +388,7 @@ test('should search payments', async t => {
     paymentStatus: 'SUCCESS'
   };
 
-  const result = await paymentAdapter.search(request)
+  const result = await paymentAdapter.searchPayments(request)
   t.is(result.id, 1)
   t.is(result.price, 100)
   t.is(result.paidPrice, 100)
@@ -464,7 +464,7 @@ test('should approve payment tx', async t => {
     isTransactional: false
   };
 
-  const result = await paymentAdapter.approvePaymentTransaction(request)
+  const result = await paymentAdapter.approvePaymentTransactions(request)
   t.is(result.items[0].paymentTransactionId, 100)
   t.is(result.items[0].approvalStatus, 'APPROVED')
   t.is(result.items[0].failedReason, '')
@@ -498,7 +498,7 @@ test('should disapprove payment tx', async t => {
     isTransactional: false
   };
 
-  const result = await paymentAdapter.disapprovePaymentTransaction(request)
+  const result = await paymentAdapter.disapprovePaymentTransactions(request)
   t.is(result.items[0].paymentTransactionId, 100)
   t.is(result.items[0].approvalStatus, 'APPROVED')
   t.is(result.items[0].failedReason, '')
@@ -746,7 +746,7 @@ test('should retrieve refund tx', async t => {
     }
   })
 
-  const result = await paymentAdapter.retrieveRefundTransaction(1)
+  const result = await paymentAdapter.retrievePaymentTransactionRefund(1)
   t.is(result.id, 1)
   t.is(result.conversationId, '9d43edb0-f141-4f14-8e99-57126f941fde')
   t.is(result.status, 'SUCCESS')
@@ -788,7 +788,7 @@ test('should search refund tx', async t => {
     paymentId: 1
   }
 
-  const result = await paymentAdapter.searchRefundTransactions(request)
+  const result = await paymentAdapter.searchPaymentTransactionRefunds(request)
   t.is(result.items[0].id, 1)
   t.is(result.items[0].conversationId, '9d43edb0-f141-4f14-8e99-57126f941fde')
   t.is(result.items[0].status, 'SUCCESS')
@@ -861,7 +861,7 @@ test('should retrieve refund', async t => {
     }
   })
 
-  const result = await paymentAdapter.retrieveRefund(1)
+  const result = await paymentAdapter.retrievePaymentRefund(1)
   t.is(result.id, 1)
   t.is(result.conversationId, '9d43edb0-f141-4f14-8e99-57126f941fde')
   t.is(result.status, 'SUCCESS')
