@@ -1,10 +1,10 @@
 import SettlementType from '../model/SettlementType';
 
-type ListPayoutCompletedTransactionsRequest = {
+type SearchPayoutCompletedTransactionsRequest = {
   settlementFileId: number;
   settlementType: SettlementType;
   startDate: Date;
   endDate: Date;
 };
 
-export default ListPayoutCompletedTransactionsRequest;
+export default SearchPayoutCompletedTransactionsRequest;

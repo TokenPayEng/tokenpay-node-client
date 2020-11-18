@@ -9,7 +9,7 @@ const settlementReportingAdapter = new TokenPay.Adapter.SettlementReportingAdapt
   baseUrl: 'http://localhost:8000'
 });
 
-test('listBouncedSubMerchantRows() should retrieve bounced settlement rows for sub merchants', async t => {
+test('listBouncedSubMerchantRows() should search bounced settlement rows for sub merchants', async t => {
   const startDate = new Date(Date.parse('2020-09-11 08:00:00+03:00'));
   const endDate = new Date(Date.parse('2020-09-12 08:00:00+03:00'));
 
@@ -43,7 +43,7 @@ test('listBouncedSubMerchantRows() should retrieve bounced settlement rows for s
     .get(`/settlement-reporting/v1/settlement-file/bounced-sub-merchant-rows?${queryString}`)
     .reply(200, {data: response});
 
-  const {page, size, totalSize, items} = await settlementReportingAdapter.listBouncedSubMerchantRows(request);
+  const {page, size, totalSize, items} = await settlementReportingAdapter.searchBouncedSubMerchantRows(request);
   t.is(page, 0);
   t.is(size, 25);
   t.is(totalSize, 2);
@@ -60,7 +60,7 @@ test('listBouncedSubMerchantRows() should retrieve bounced settlement rows for s
   t.is(items[1].legalCompanyTitle, 'Uncle Ben Consultancy');
 });
 
-test('listPayoutCompletedTransactions() should retrieve settlement rows for transactions that are already paid out', async t => {
+test('listPayoutCompletedTransactions() should search settlement rows for transactions that are already paid out', async t => {
   const startDate = new Date(Date.parse('2020-09-11 08:00:00+03:00'));
   const endDate = new Date(Date.parse('2020-09-12 08:00:00+03:00'));
 
@@ -98,7 +98,7 @@ test('listPayoutCompletedTransactions() should retrieve settlement rows for tran
     .get(`/settlement-reporting/v1/settlement-file/payout-completed-transactions?${queryString}`)
     .reply(200, {data: response});
 
-  const {page, size, totalSize, items} = await settlementReportingAdapter.listPayoutCompletedTransactions(request);
+  const {page, size, totalSize, items} = await settlementReportingAdapter.searchPayoutCompletedTransactions(request);
   t.is(page, 0);
   t.is(size, 25);
   t.is(totalSize, 1);

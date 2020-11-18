@@ -13,6 +13,6 @@ const request = {
   endDate: new Date(Date.now() - 24 * 60 * 60 * 1000)
 };
 
-tokenPay.settlementReporting().listPayoutCompletedTransactions(request)
+tokenPay.settlementReporting().searchPayoutCompletedTransactions(request)
   .then(result => console.info('Retrieve settlement rows for paid out transactions', result))
   .catch(err => console.error('Failed to retrieve settlement rows for paid out transactions', err));

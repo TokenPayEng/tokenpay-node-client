@@ -6,6 +6,6 @@ const tokenPay = new TokenPay.Client({
   baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
-tokenPay.installment().checkBinNumber('525864')
+tokenPay.installment().retrieveBinNumber('525864')
   .then(result => console.info('Search bin number information', result))
   .catch(err => console.error('Failed to search bin number information', err));

@@ -1,7 +1,7 @@
 import CardAssociation from '../model/CardAssociation';
 import CardType from '../model/CardType';
 
-type CheckBinNumberResponse = {
+type BinNumberResponse = {
   binNumber: string;
   cardType: CardType;
   cardAssociation: CardAssociation;
@@ -11,4 +11,4 @@ type CheckBinNumberResponse = {
   commercial: boolean;
 };
 
-export default CheckBinNumberResponse;
+export default BinNumberResponse;

@@ -11,6 +11,6 @@ const request = {
   endDate: new Date(Date.now() - 24 * 60 * 60 * 1000)
 };
 
-tokenPay.settlementReporting().listBouncedSubMerchantRows(request)
+tokenPay.settlementReporting().searchBouncedSubMerchantRows(request)
   .then(result => console.info('Retrieve bounced sub merchant rows', result))
   .catch(err => console.error('Failed to retrieve bounced sub merchant rows', err));
