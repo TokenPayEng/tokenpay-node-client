@@ -1,5 +1,5 @@
-import Currency from '../model/Currency'
-import MerchantType from '../model/MerchantType'
+import Currency from '../model/Currency';
+import MerchantType from '../model/MerchantType';
 
 type PayoutCompletedTransactionResponse = {
   transactionId: number;

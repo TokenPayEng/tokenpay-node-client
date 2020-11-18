@@ -3,6 +3,6 @@ type DataResponse<T> = {
   size: number;
   totalSize: number;
   items: T[];
-}
+};
 
 export default DataResponse;

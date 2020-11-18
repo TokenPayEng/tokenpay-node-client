@@ -1,9 +1,10 @@
-import PaymentType from '../model/PaymentType'
-import Currency from '../model/Currency'
-import PaymentStatus from '../model/PaymentStatus'
-import PaymentCard from './dto/PaymentCard'
-import PaymentRefund from './dto/PaymentRefund'
-import PaymentTx from './dto/PaymentTx'
+import Currency from '../model/Currency';
+import PaymentStatus from '../model/PaymentStatus';
+import PaymentType from '../model/PaymentType';
+
+import PaymentCard from './dto/PaymentCard';
+import PaymentRefund from './dto/PaymentRefund';
+import PaymentTx from './dto/PaymentTx';
 
 type SearchPaymentsResponse = {
   id: number;
@@ -21,6 +22,6 @@ type SearchPaymentsResponse = {
   paymentCard: PaymentCard;
   paymentRefunds: PaymentRefund[];
   paymentTxs: PaymentTx[];
-}
+};
 
 export default SearchPaymentsResponse;

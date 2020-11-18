@@ -1,4 +1,3 @@
-import BaseAdapter from './BaseAdapter';
 import {ClientCreationOptions} from '../lib/HttpClient';
 
 import CreateBuyerRequest from '../request/CreateBuyerRequest';
@@ -10,6 +9,8 @@ import UpdateSubMerchantRequest from '../request/UpdateSubMerchantRequest';
 import BuyerResponse from '../response/BuyerResponse';
 import DataResponse from '../response/DataResponse';
 import SubMerchantResponse from '../response/SubMerchantResponse';
+
+import BaseAdapter from './BaseAdapter';
 
 export default class OnboardingAdapter extends BaseAdapter {
   constructor(options: ClientCreationOptions) {

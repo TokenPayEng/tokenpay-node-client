@@ -4,6 +4,6 @@ enum CrossBookingTransactionStatus {
   PayoutCompleted = 'PAYOUT_COMPLETED',
   NotFoundInSettlement = 'NOT_FOUND_IN_SETTLEMENT',
   Cancelled = 'CANCELLED'
-};
+}
 
 export default CrossBookingTransactionStatus;

@@ -1,7 +1,8 @@
-import CardType from '../../model/CardType'
-import CardAssociation from '../../model/CardAssociation'
-import Installment from '../../model/Installment'
-import Error from './Error'
+import CardAssociation from '../../model/CardAssociation';
+import CardType from '../../model/CardType';
+import Installment from '../../model/Installment';
+
+import Error from './Error';
 
 type PaymentCard = {
   cardType: CardType;

@@ -6,7 +6,7 @@ type ErrorResponse = {
 export default class TokenPayError extends Error {
   private _errorCode: string;
   private _errorDescription: string;
-  private _errorData: object;
+  private _errorData: any;
 
   constructor({errorCode, errorDescription, ...rest}: ErrorResponse) {
     super(errorDescription);
@@ -26,7 +26,7 @@ export default class TokenPayError extends Error {
     return this._errorDescription;
   }
 
-  getErrorData(): object {
+  getErrorData(): any {
     return this._errorData;
   }
 }

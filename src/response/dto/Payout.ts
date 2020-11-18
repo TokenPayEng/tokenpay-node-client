@@ -1,4 +1,4 @@
-import Currency from "./../../model/Currency";
+import Currency from '../../model/Currency';
 
 type Payout = {
   paidPrice: number;
@@ -8,6 +8,6 @@ type Payout = {
   pfCommissionRateAmount: number;
   pfConversionRate: number;
   pfConversionRateAmount: number;
-}
+};
 
 export default Payout;

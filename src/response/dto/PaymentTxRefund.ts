@@ -1,12 +1,13 @@
-import PaymentType from '../../model/PaymentType'
-import RefundStatus from '../../model/RefundStatus'
-import RefundDestinationType from '../../model/RefundDestinationType'
-import Error from './Error'
+import PaymentType from '../../model/PaymentType';
+import RefundDestinationType from '../../model/RefundDestinationType';
+import RefundStatus from '../../model/RefundStatus';
+
+import Error from './Error';
 
 type PaymentTxRefund = {
   id: number;
   createdDate: Date;
-  refundStatus: RefundStatus ;
+  refundStatus: RefundStatus;
   refundDestinationType: RefundDestinationType;
   refundPrice: number;
   refundBankPrice: number;

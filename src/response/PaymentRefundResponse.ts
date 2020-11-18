@@ -1,8 +1,9 @@
-import RefundStatus from '../model/RefundStatus'
-import RefundType from '../model/RefundType'
-import RefundDestinationType from '../model/RefundDestinationType'
-import PaymentTransactionRefundResponse from '../response/PaymentTransactionRefundResponse';
 import Currency from '../model/Currency';
+import RefundDestinationType from '../model/RefundDestinationType';
+import RefundStatus from '../model/RefundStatus';
+import RefundType from '../model/RefundType';
+
+import PaymentTransactionRefundResponse from './PaymentTransactionRefundResponse';
 
 type PaymentRefundResponse = {
   id: number;

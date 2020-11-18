@@ -1,7 +1,8 @@
-import TransactionStatus from '../../model/TransactionStatus'
-import Payout from './Payout'
-import PaymentTxCard from './PaymentTxCard'
-import PaymentTxRefund from './PaymentTxRefund'
+import TransactionStatus from '../../model/TransactionStatus';
+
+import PaymentTxCard from './PaymentTxCard';
+import PaymentTxRefund from './PaymentTxRefund';
+import Payout from './Payout';
 
 type PaymentTx = {
   id: number;

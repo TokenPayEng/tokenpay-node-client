@@ -1,9 +1,9 @@
-import {Card} from './dto/Card';
-
-import PaymentItem from './dto/PaymentItem';
-import Installment from '../model/Installment';
 import Currency from '../model/Currency';
+import Installment from '../model/Installment';
 import PaymentGroup from '../model/PaymentGroup';
+
+import {Card} from './dto/Card';
+import PaymentItem from './dto/PaymentItem';
 
 type CreatePaymentRequest = {
   price: number;

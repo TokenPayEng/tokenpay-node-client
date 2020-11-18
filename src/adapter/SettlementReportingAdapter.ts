@@ -1,12 +1,13 @@
-import BaseAdapter from './BaseAdapter';
 import {ClientCreationOptions} from '../lib/HttpClient';
 
 import SearchBouncedSubMerchantRowsRequest from '../request/SearchBouncedSubMerchantRowsRequest';
 import SearchPayoutCompletedTransactionsRequest from '../request/SearchPayoutCompletedTransactionsRequest';
 
 import BouncedSubMerchantRowResponse from '../response/BouncedSubMerchantRowResponse';
-import PayoutCompletedTransactionResponse from '../response/PayoutCompletedTransactionResponse';
 import DataResponse from '../response/DataResponse';
+import PayoutCompletedTransactionResponse from '../response/PayoutCompletedTransactionResponse';
+
+import BaseAdapter from './BaseAdapter';
 
 export default class SettlementReportingAdapter extends BaseAdapter {
   constructor(options: ClientCreationOptions) {

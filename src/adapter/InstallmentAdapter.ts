@@ -1,11 +1,12 @@
-import BaseAdapter from './BaseAdapter';
 import {ClientCreationOptions} from '../lib/HttpClient';
 
 import SearchInstallmentsRequest from '../request/SearchInstallmentsRequest';
 
 import BinNumberResponse from '../response/BinNumberResponse';
+import DataResponse from '../response/DataResponse';
 import SearchInstallmentsResponse from '../response/SearchInstallmentsResponse';
-import DataResponse from "../response/DataResponse";
+
+import BaseAdapter from './BaseAdapter';
 
 export default class InstallmentAdapter extends BaseAdapter {
   constructor(options: ClientCreationOptions) {

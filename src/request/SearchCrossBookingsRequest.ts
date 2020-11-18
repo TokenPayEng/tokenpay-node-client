@@ -1,5 +1,5 @@
-import CrossBookingTransactionStatus from '../model/CrossBookingTransactionStatus'
-import MerchantType from '../model/MerchantType'
+import CrossBookingTransactionStatus from '../model/CrossBookingTransactionStatus';
+import MerchantType from '../model/MerchantType';
 
 type SearchCrossBookingsRequest = {
   sourceMerchantId: number;

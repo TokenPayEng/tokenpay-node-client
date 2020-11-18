@@ -1,6 +1,6 @@
-import PaymentStatus from '../model/PaymentStatus'
-import Currency from '../model/Currency'
+import Currency from '../model/Currency';
 import Installment from '../model/Installment';
+import PaymentStatus from '../model/PaymentStatus';
 
 type SearchPaymentsRequest = {
   page?: number;

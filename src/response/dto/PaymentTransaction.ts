@@ -1,5 +1,6 @@
-import TransactionStatus from "../../model/TransactionStatus";
-import Payout from "./Payout";
+import TransactionStatus from '../../model/TransactionStatus';
+
+import Payout from './Payout';
 
 type PaymentTransaction = {
   id: number;
@@ -19,6 +20,6 @@ type PaymentTransaction = {
   transactionStatus: TransactionStatus;
   blockageResolvedDate: Date;
   payout: Payout;
-}
+};
 
 export default PaymentTransaction;

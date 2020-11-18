@@ -1,7 +1,6 @@
-import TokenPayClient from './TokenPayClient';
-
 import Adapter from './adapter';
-import Model from './model'
+import Model from './model';
+import TokenPayClient from './TokenPayClient';
 import TokenPayError from './TokenPayError';
 
 const TokenPay = {

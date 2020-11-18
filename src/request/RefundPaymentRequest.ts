@@ -1,4 +1,4 @@
-import RefundDestinationType from '../model/RefundDestinationType'
+import RefundDestinationType from '../model/RefundDestinationType';
 
 type RefundPaymentRequest = {
   paymentId: number;

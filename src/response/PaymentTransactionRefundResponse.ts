@@ -1,5 +1,5 @@
-import RefundStatus from "../model/RefundStatus";
-import RefundDestinationType from "../model/RefundDestinationType";
+import RefundDestinationType from '../model/RefundDestinationType';
+import RefundStatus from '../model/RefundStatus';
 
 type PaymentTransactionRefundResponse = {
   id: number;
@@ -14,6 +14,6 @@ type PaymentTransactionRefundResponse = {
   paymentTransactionId: number;
   paymentId: number;
   refundDestinationType: RefundDestinationType;
-}
+};
 
 export default PaymentTransactionRefundResponse;

@@ -1,5 +1,6 @@
 import CardAssociation from '../model/CardAssociation';
 import CardType from '../model/CardType';
+
 import InstallmentPrice from './dto/InstallmentPrice';
 
 type SearchInstallmentsResponse = {

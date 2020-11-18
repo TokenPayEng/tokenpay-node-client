@@ -1,8 +1,8 @@
 type Error = {
-  errorCode: String;
-  errorName: String;
-  errorGroup: String;
-  errorMessage: String;
+  errorCode: string;
+  errorName: string;
+  errorGroup: string;
+  errorMessage: string;
 };
 
 export default Error;

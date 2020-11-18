@@ -1,7 +1,8 @@
-import PaymentType from '../../model/PaymentType'
-import RefundStatus from '../../model/RefundStatus'
-import RefundDestinationType from '../../model/RefundDestinationType'
-import Error from './Error'
+import PaymentType from '../../model/PaymentType';
+import RefundDestinationType from '../../model/RefundDestinationType';
+import RefundStatus from '../../model/RefundStatus';
+
+import Error from './Error';
 
 type PaymentRefund = {
   id: number;

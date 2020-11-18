@@ -1,8 +1,8 @@
 import axios, {AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios';
 
-import {serializeParams, getAbsoluteUrl, generateRandomString, calculateSignature} from './utils';
-
 import TokenPayError from '../TokenPayError';
+
+import {serializeParams, getAbsoluteUrl, generateRandomString, calculateSignature} from './utils';
 
 export type ClientOptions = {
   apiKey: string;
@@ -12,20 +12,16 @@ export type ClientOptions = {
 
 export type ClientCreationOptions = Partial<ClientOptions>;
 
-const API_KEY_HEADER_NAME: string = 'x-api-key';
-const RANDOM_HEADER_NAME: string = 'x-rnd-key';
-const AUTH_VERSION_HEADER_NAME: string = 'x-auth-version';
-const SIGNATURE_HEADER_NAME: string = 'x-signature';
+const API_KEY_HEADER_NAME = 'x-api-key';
+const RANDOM_HEADER_NAME = 'x-rnd-key';
+const AUTH_VERSION_HEADER_NAME = 'x-auth-version';
+const SIGNATURE_HEADER_NAME = 'x-signature';
 
 export class HttpClient {
   private readonly _client: AxiosInstance;
   private readonly _options: ClientOptions;
 
-  constructor({
-    apiKey,
-    secretKey,
-    baseUrl = 'https://api.tokenpay.com.tr'
-  }: ClientCreationOptions = {}) {
+  constructor({apiKey, secretKey, baseUrl = 'https://api.tokenpay.com.tr'}: ClientCreationOptions = {}) {
     this._options = {apiKey, secretKey, baseUrl};
     this._client = axios.create({baseURL: baseUrl});
 
@@ -78,7 +74,7 @@ export class HttpClient {
 
   /**
    * Attempts to handle any errors received from the API, throwing a {@link TokenPayError} if necessary
-   * 
+   *
    * @param response the response
    */
   private _handleBusinessErrors(response: AxiosResponse) {

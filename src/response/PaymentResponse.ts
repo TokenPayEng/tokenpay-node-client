@@ -1,12 +1,13 @@
-import Currency from "../model/Currency";
-import Installment from "../model/Installment"
-import PaymentType from "../model/PaymentType"
-import PaymentGroup from "../model/PaymentGroup"
-import PaymentStatus from "../model/PaymentStatus"
-import PaymentPhase from "../model/PaymentPhase"
-import CardType from "../model/CardType"
-import CardAssociation from "../model/CardAssociation"
-import PaymentTransaction from "./dto/PaymentTransaction"
+import CardAssociation from '../model/CardAssociation';
+import CardType from '../model/CardType';
+import Currency from '../model/Currency';
+import Installment from '../model/Installment';
+import PaymentGroup from '../model/PaymentGroup';
+import PaymentPhase from '../model/PaymentPhase';
+import PaymentStatus from '../model/PaymentStatus';
+import PaymentType from '../model/PaymentType';
+
+import PaymentTransaction from './dto/PaymentTransaction';
 
 type PaymentResponse = {
   id: number;
@@ -35,6 +36,6 @@ type PaymentResponse = {
   cardAssociation: CardAssociation;
   cardBrand: string;
   paymentTransactions: PaymentTransaction[];
-}
+};
 
 export default PaymentResponse;
