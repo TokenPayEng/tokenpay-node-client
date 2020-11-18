@@ -173,5 +173,8 @@ For all adapters in the `TokenPayClient`, their purposes, accessors, as well as 
 | `PaymentAdapter` | Conducting payments, retrieving payment information, managing stored cards | `payment()` | `@tokenpay/tokenpay/adapters/PaymentAdapter` |
 | `SettlementReportingAdapter` | Retrieving information on settlements | `settlementReporting()` | `@tokenpay/tokenpay/adapters/SettlementReportingAdapter` |
 
+## Development
+To contribute to the project, please see our guidelines at [CONTRIBUTING](./CONTRIBUTING.md)
+
 ## License
 MIT
