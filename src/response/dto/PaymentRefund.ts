@@ -1,9 +1,9 @@
 import PaymentType from '../../model/PaymentType'
 import RefundStatus from '../../model/RefundStatus'
 import RefundDestinationType from '../../model/RefundDestinationType'
-import ErrorDto from './ErrorDto'
+import Error from './Error'
 
-export type PaymentRefund = {
+type PaymentRefund = {
   id: number;
   createdDate: Date;
   refundStatus: RefundStatus;
@@ -13,7 +13,7 @@ export type PaymentRefund = {
   refundWalletPrice: number;
   conversationId: string;
   paymentType: PaymentType;
-  error: ErrorDto;
+  error: Error;
 };
 
 export default PaymentRefund;

@@ -3,7 +3,7 @@ import {ClientCreationOptions} from '../lib/HttpClient';
 
 import CreateBuyerRequest from '../request/CreateBuyerRequest';
 import CreateSubMerchantRequest from '../request/CreateSubMerchantRequest';
-import SearchSubMerchantRequest from '../request/SearchSubMerchantRequest';
+import SearchSubMerchantsRequest from '../request/SearchSubMerchantsRequest';
 import UpdateBuyerRequest from '../request/UpdateBuyerRequest';
 import UpdateSubMerchantRequest from '../request/UpdateSubMerchantRequest';
 
@@ -28,7 +28,7 @@ export default class OnboardingAdapter extends BaseAdapter {
     return this._client.get(`/onboarding/v1/sub-merchants/${subMerchantId}`);
   }
 
-  async searchSubMerchants(request: SearchSubMerchantRequest): Promise<DataResponse<SubMerchantResponse>> {
+  async searchSubMerchants(request: SearchSubMerchantsRequest): Promise<DataResponse<SubMerchantResponse>> {
     return this._client.get(`/onboarding/v1/sub-merchants`, request);
   }
 

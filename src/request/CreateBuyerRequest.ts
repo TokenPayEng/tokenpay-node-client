@@ -3,7 +3,7 @@ type CreateBuyerRequest = {
   name: string;
   surname: string;
   gsmNumber: string;
-  tckn: string;
+  identityNumber: string;
   buyerExternalId: string;
 };
 

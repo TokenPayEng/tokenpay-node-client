@@ -3,7 +3,7 @@ type UpdateBuyerRequest = {
   name: string;
   surname: string;
   gsmNumber: string;
-  tckn: string;
+  identityNumber: string;
 };
 
 export default UpdateBuyerRequest;

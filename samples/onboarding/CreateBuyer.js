@@ -1,21 +1,18 @@
 const TokenPay = require('../../dist');
 
-// Example: Create Buyer
-// Creates a buyer
-
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 const request = {
-  buyerExternalId: '48912312',
-  email: 'hikmet.altun@tokenpay.com.tr',
-  gsmNumber: '+905551111111',
-  name: 'Hikmet',
-  surname: 'Altun',
-  tckn: '94625132918'
+  buyerExternalId: '0c46f36f-051a-4519-95b8-42823e367f4e',
+  email: 'haluk.demir@example.com',
+  gsmNumber: '905551111111',
+  name: 'Haluk',
+  surname: 'Demir',
+  identityNumber: '11111111110'
 };
 
 tokenPay.onboarding().createBuyer(request)

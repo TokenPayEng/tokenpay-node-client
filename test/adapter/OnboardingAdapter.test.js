@@ -9,7 +9,7 @@ const onboardingAdapter = new TokenPay.Adapter.OnboardingAdapter({
   baseUrl: 'http://localhost:8000'
 });
 
-test('createSubMerchant() should create submerchant', async t => {
+test('createSubMerchant() should create sub merchant', async t => {
   const request = {
     subMerchantType: TokenPay.Model.SubMerchantType.Personal,
     subMerchantExternalId: 'wormie',
@@ -66,7 +66,7 @@ test('createSubMerchant() should create submerchant', async t => {
   t.is(result.subMerchantExternalId, 'wormie');
 });
 
-test('updateSubMerchant() should update submerchant', async t => {
+test('updateSubMerchant() should update sub merchant', async t => {
   const request = {
     id: 42,
     name: 'Luke Skywalker',
@@ -122,7 +122,7 @@ test('updateSubMerchant() should update submerchant', async t => {
   t.is(result.subMerchantExternalId, 'wormie');
 });
 
-test('retrieveSubMerchant() should update submerchant', async t => {
+test('retrieveSubMerchant() should update sub merchant', async t => {
   const response = {
     id: 42,
     status: 'ACTIVE',
@@ -163,7 +163,7 @@ test('retrieveSubMerchant() should update submerchant', async t => {
   t.is(result.subMerchantExternalId, 'wormie');
 });
 
-test('searchSubMerchants() should search for submerchants', async t => {
+test('searchSubMerchants() should search for sub merchants', async t => {
   const request = {
     name: 'luke',
     subMerchantIds: [1, 2, 42],

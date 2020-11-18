@@ -2,28 +2,28 @@ import BaseAdapter from './BaseAdapter';
 import {ClientCreationOptions} from '../lib/HttpClient';
 
 import CreatePaymentRequest from '../request/CreatePaymentRequest';
-import SearchPaymentRequest from '../request/SearchPaymentRequest';
-import ApprovePaymentTransactionRequest from '../request/ApprovePaymentTransactionRequest';
-import DisapprovePaymentTransactionRequest from '../request/DisapprovePaymentTransactionRequest';
-import Complete3DSPaymentRequest from '../request/Complete3DSPaymentRequest';
-import CreateRefundTxRequest from '../request/CreateRefundTxRequest';
-import SearchRefundTransactionsRequest from '../request/SearchRefundTransactionsRequest';
+import SearchPaymentsRequest from '../request/SearchPaymentsRequest';
+import ApprovePaymentTransactionsRequest from '../request/ApprovePaymentTransactionsRequest';
+import DisapprovePaymentTransactionsRequest from '../request/DisapprovePaymentTransactionsRequest';
+import CompleteThreeDSPaymentRequest from '../request/CompleteThreeDSPaymentRequest';
+import RefundPaymentTransactionRequest from '../request/RefundPaymentTransactionRequest';
+import SearchPaymentTransactionRefundsRequest from '../request/SearchPaymentTransactionRefundsRequest';
 import RefundPaymentRequest from '../request/RefundPaymentRequest';
 import CrossBookingRequest from '../request/CrossBookingRequest';
 import CancelCrossBookingRequest from '../request/CancelCrossBookingRequest';
 import SearchCrossBookingsRequest from '../request/SearchCrossBookingsRequest';
 import DeleteStoredCardRequest from '../request/DeleteStoredCardRequest';
-import SearchStoredCardRequest from '../request/SearchStoredCardRequest';
+import SearchStoredCardsRequest from '../request/SearchStoredCardsRequest';
 
-import CardPaymentResponse from '../response/CardPaymentResponse';
-import SearchPaymentResponse from '../response/SearchPaymentResponse';
+import PaymentResponse from '../response/PaymentResponse';
+import SearchPaymentsResponse from '../response/SearchPaymentsResponse';
 import ApprovePaymentTransactionResponse from '../response/ApprovePaymentTransactionResponse';
 import DisapprovePaymentTransactionResponse from '../response/DisapprovePaymentTransactionResponse';
-import ThreeDSInitResponse from '../response/ThreeDSInitResponse';
+import InitThreeDSPaymentResponse from '../response/InitThreeDSPaymentResponse';
 import DataResponse from '../response/DataResponse';
-import RefundTxResponse from '../response/RefundTxResponse';
-import RefundPaymentResponse from '../response/RefundPaymentResponse';
-import CrossBookingTxResponse from '../response/CrossBookingTxResponse';
+import PaymentTransactionRefundResponse from '../response/PaymentTransactionRefundResponse';
+import PaymentRefundResponse from '../response/PaymentRefundResponse';
+import CrossBookingTransactionResponse from '../response/CrossBookingTransactionResponse';
 import StoredCardResponse from '../response/StoredCardResponse';
 
 export default class PaymentAdapter extends BaseAdapter {
@@ -31,67 +31,67 @@ export default class PaymentAdapter extends BaseAdapter {
     super(options);
   }
 
-  async createPayment(request: CreatePaymentRequest): Promise<CardPaymentResponse> {
+  async createPayment(request: CreatePaymentRequest): Promise<PaymentResponse> {
     return this._client.post('/payment/v1/card-payments', request);
   }
 
-  async retrieve(id: number): Promise<CardPaymentResponse> {
+  async retrievePayment(id: number): Promise<PaymentResponse> {
     return this._client.get(`/payment/v1/card-payments/${id}`);
   }
 
-  async search(request: SearchPaymentRequest): Promise<DataResponse<SearchPaymentResponse>> {
+  async searchPayments(request: SearchPaymentsRequest): Promise<DataResponse<SearchPaymentsResponse>> {
     return this._client.get('/payment-reporting/v1/payments', request);
   }
 
-  async approvePaymentTransaction(request: ApprovePaymentTransactionRequest): Promise<DataResponse<ApprovePaymentTransactionResponse>> {
+  async approvePaymentTransactions(request: ApprovePaymentTransactionsRequest): Promise<DataResponse<ApprovePaymentTransactionResponse>> {
     return this._client.post('/payment/v1/payment-transactions/approve', request);
   }
 
-  async disapprovePaymentTransaction(request: DisapprovePaymentTransactionRequest): Promise<DataResponse<DisapprovePaymentTransactionResponse>> {
+  async disapprovePaymentTransactions(request: DisapprovePaymentTransactionsRequest): Promise<DataResponse<DisapprovePaymentTransactionResponse>> {
     return this._client.post('/payment/v1/payment-transactions/disapprove', request);
   }
 
-  async init3DSPayment(request: CreatePaymentRequest): Promise<ThreeDSInitResponse> {
+  async init3DSPayment(request: CreatePaymentRequest): Promise<InitThreeDSPaymentResponse> {
     return this._client.post('/payment/v1/card-payments/3ds-init', request);
   }
 
-  async complete3DSPayment(request: Complete3DSPaymentRequest): Promise<CardPaymentResponse> {
+  async complete3DSPayment(request: CompleteThreeDSPaymentRequest): Promise<PaymentResponse> {
     return this._client.post('/payment/v1/card-payments/3ds-complete', request);
   }
 
-  async refundPaymentTransaction(request: CreateRefundTxRequest): Promise<RefundTxResponse> {
+  async refundPaymentTransaction(request: RefundPaymentTransactionRequest): Promise<PaymentTransactionRefundResponse> {
     return this._client.post('/payment/v1/refund-transactions', request);
   }
 
-  async retrieveRefundTransaction(refundTxId: number): Promise<RefundTxResponse> {
+  async retrievePaymentTransactionRefund(refundTxId: number): Promise<PaymentTransactionRefundResponse> {
     return this._client.get(`/payment/v1/refund-transactions/${refundTxId}`);
   }
 
-  async searchRefundTransactions(request: SearchRefundTransactionsRequest): Promise<DataResponse<RefundTxResponse>> {
+  async searchPaymentTransactionRefunds(request: SearchPaymentTransactionRefundsRequest): Promise<DataResponse<PaymentTransactionRefundResponse>> {
     return this._client.get('/payment/v1/refund-transactions', request);
   }
 
-  async refundPayment(request: RefundPaymentRequest): Promise<RefundPaymentResponse> {
+  async refundPayment(request: RefundPaymentRequest): Promise<PaymentRefundResponse> {
     return this._client.post('/payment/v1/refunds', request);
   }
 
-  async retrieveRefund(refundId: number): Promise<RefundPaymentResponse> {
+  async retrievePaymentRefund(refundId: number): Promise<PaymentRefundResponse> {
     return this._client.get(`/payment/v1/refunds/${refundId}`);
   }
 
-  async receiveMoney(request: CrossBookingRequest): Promise<CrossBookingTxResponse> {
+  async receiveMoney(request: CrossBookingRequest): Promise<CrossBookingTransactionResponse> {
     return this._client.post('/payment/v1/cross-bookings/receive', request);
   }
 
-  async sendMoney(request: CrossBookingRequest): Promise<CrossBookingTxResponse> {
+  async sendMoney(request: CrossBookingRequest): Promise<CrossBookingTransactionResponse> {
     return this._client.post('/payment/v1/cross-bookings/send', request);
   }
 
-  async cancelCrossBooking(request: CancelCrossBookingRequest): Promise<CrossBookingTxResponse> {
+  async cancelCrossBooking(request: CancelCrossBookingRequest): Promise<CrossBookingTransactionResponse> {
     return this._client.post('/payment/v1/cross-bookings/cancel', request);
   }
 
-  async searchCrossBookings(request: SearchCrossBookingsRequest): Promise<DataResponse<CrossBookingTxResponse>> {
+  async searchCrossBookings(request: SearchCrossBookingsRequest): Promise<DataResponse<CrossBookingTransactionResponse>> {
     return this._client.get('/payment/v1/cross-bookings', request);
   }
 
@@ -99,7 +99,7 @@ export default class PaymentAdapter extends BaseAdapter {
     await this._client.delete('/payment/v1/cards', request);
   }
 
-  async searchStoredCards(request: SearchStoredCardRequest): Promise<DataResponse<StoredCardResponse>> {
+  async searchStoredCards(request: SearchStoredCardsRequest): Promise<DataResponse<StoredCardResponse>> {
     return this._client.get('/payment/v1/cards', request);
   }
 }

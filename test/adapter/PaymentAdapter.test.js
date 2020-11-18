@@ -99,7 +99,7 @@ test('should pay', async t => {
     card: {
       cardHolderName: 'Ahmet Mehmet',
       cardNumber: '5406670000000009',
-      expireYear: '2035',
+      expireYear: '2044',
       expireMonth: '11',
       cvc: '123'
     },
@@ -118,7 +118,7 @@ test('should pay', async t => {
       }
     ]
   };
-  
+
   const result = await paymentAdapter.createPayment(request)
   t.is(result.id, 1)
   t.is(result.price, 100)
@@ -151,7 +151,7 @@ test('should pay', async t => {
   t.is(result.paymentTransactions[0].subMerchantPayoutRate, 90)
   t.is(result.paymentTransactions[0].subMerchantPayoutAmount, 29.7)
   t.is(result.paymentTransactions[0].pfCommissionRateAmount, 0)
-  
+
   t.is(result.paymentTransactions[1].id, 2)
   t.is(result.paymentTransactions[1].externalId, 'a5eb1ab1-2676-4c10-830d-cc204e0f2126')
   t.is(result.paymentTransactions[1].name, 'Supradyn')
@@ -168,7 +168,7 @@ test('should pay', async t => {
   t.is(result.paymentTransactions[1].subMerchantPayoutRate, 84)
   t.is(result.paymentTransactions[1].subMerchantPayoutAmount, 29.7)
   t.is(result.paymentTransactions[1].pfCommissionRateAmount, 0)
-  
+
 });
 
 test('should retrive payment', async t => {
@@ -250,8 +250,8 @@ test('should retrive payment', async t => {
     },
   })
 
-  
-  const result = await paymentAdapter.retrieve(1)
+
+  const result = await paymentAdapter.retrievePayment(1)
 
   t.is(result.id, 1)
   t.is(result.price, 100)
@@ -284,7 +284,7 @@ test('should retrive payment', async t => {
   t.is(result.paymentTransactions[0].subMerchantPayoutRate, 90)
   t.is(result.paymentTransactions[0].subMerchantPayoutAmount, 29.7)
   t.is(result.paymentTransactions[0].pfCommissionRateAmount, 0)
-  
+
   t.is(result.paymentTransactions[1].id, 2)
   t.is(result.paymentTransactions[1].externalId, 'a5eb1ab1-2676-4c10-830d-cc204e0f2126')
   t.is(result.paymentTransactions[1].name, 'Supradyn')
@@ -387,8 +387,8 @@ test('should search payments', async t => {
     size: 10,
     paymentStatus: 'SUCCESS'
   };
-  
-  const result = await paymentAdapter.search(request)
+
+  const result = await paymentAdapter.searchPayments(request)
   t.is(result.id, 1)
   t.is(result.price, 100)
   t.is(result.paidPrice, 100)
@@ -420,7 +420,7 @@ test('should search payments', async t => {
   t.is(result.paymentTransactions[0].subMerchantPayoutRate, 90)
   t.is(result.paymentTransactions[0].subMerchantPayoutAmount, 29.7)
   t.is(result.paymentTransactions[0].pfCommissionRateAmount, 0)
-  
+
   t.is(result.paymentTransactions[1].id, 2)
   t.is(result.paymentTransactions[1].externalId, 'a5eb1ab1-2676-4c10-830d-cc204e0f2126')
   t.is(result.paymentTransactions[1].name, 'Supradyn')
@@ -463,8 +463,8 @@ test('should approve payment tx', async t => {
     paymentTransactionIds: [100,101],
     isTransactional: false
   };
-  
-  const result = await paymentAdapter.approvePaymentTransaction(request)
+
+  const result = await paymentAdapter.approvePaymentTransactions(request)
   t.is(result.items[0].paymentTransactionId, 100)
   t.is(result.items[0].approvalStatus, 'APPROVED')
   t.is(result.items[0].failedReason, '')
@@ -497,8 +497,8 @@ test('should disapprove payment tx', async t => {
     paymentTransactionIds: [100,101],
     isTransactional: false
   };
-  
-  const result = await paymentAdapter.disapprovePaymentTransaction(request)
+
+  const result = await paymentAdapter.disapprovePaymentTransactions(request)
   t.is(result.items[0].paymentTransactionId, 100)
   t.is(result.items[0].approvalStatus, 'APPROVED')
   t.is(result.items[0].failedReason, '')
@@ -527,7 +527,7 @@ test('should init 3ds payment', async t => {
     card: {
       cardHolderName: 'Ahmet Mehmet',
       cardNumber: '5406670000000009',
-      expireYear: '2035',
+      expireYear: '2044',
       expireMonth: '11',
       cvc: '123'
     },
@@ -546,7 +546,7 @@ test('should init 3ds payment', async t => {
       }
     ]
   };
-  
+
   const result = await paymentAdapter.init3DSPayment(request)
   t.is(result.htmlContent, 'PGh0bWw+M2RzZWN1cmUgaHRtbDwvaHRtbD4=')
 });
@@ -633,7 +633,7 @@ test('should complete three ds', async t => {
   const request = {
     paymentId: 1
   };
-  
+
   const result = await paymentAdapter.complete3DSPayment(request)
   t.is(result.id, 1)
   t.is(result.price, 100)
@@ -666,7 +666,7 @@ test('should complete three ds', async t => {
   t.is(result.paymentTransactions[0].subMerchantPayoutRate, 90)
   t.is(result.paymentTransactions[0].subMerchantPayoutAmount, 29.7)
   t.is(result.paymentTransactions[0].pfCommissionRateAmount, 0)
-  
+
   t.is(result.paymentTransactions[1].id, 2)
   t.is(result.paymentTransactions[1].externalId, 'a5eb1ab1-2676-4c10-830d-cc204e0f2126')
   t.is(result.paymentTransactions[1].name, 'Supradyn')
@@ -692,7 +692,7 @@ test('should refund payment tx', async t => {
     data: {
       id: 1,
       conversationId: '9d43edb0-f141-4f14-8e99-57126f941fde',
-      createdDate: '2035-02-21T15:00:00',
+      createdDate: '2044-07-07T00:00:00',
       status: 'SUCCESS',
       isAfterSettlement: false,
       refundPrice: 20,
@@ -711,7 +711,7 @@ test('should refund payment tx', async t => {
     refundPrice: 20,
     refundDestinationType: 'CARD'
   };
-  
+
   const result = await paymentAdapter.refundPaymentTransaction(request)
   t.is(result.id, 1)
   t.is(result.conversationId, '9d43edb0-f141-4f14-8e99-57126f941fde')
@@ -733,7 +733,7 @@ test('should retrieve refund tx', async t => {
     data: {
       id: 1,
       conversationId: '9d43edb0-f141-4f14-8e99-57126f941fde',
-      createdDate: '2035-02-21T15:00:00',
+      createdDate: '2044-07-07T00:00:00',
       status: 'SUCCESS',
       isAfterSettlement: false,
       refundPrice: 20,
@@ -745,8 +745,8 @@ test('should retrieve refund tx', async t => {
       refundDestinationType: 'CARD'
     }
   })
-  
-  const result = await paymentAdapter.retrieveRefundTransaction(1)
+
+  const result = await paymentAdapter.retrievePaymentTransactionRefund(1)
   t.is(result.id, 1)
   t.is(result.conversationId, '9d43edb0-f141-4f14-8e99-57126f941fde')
   t.is(result.status, 'SUCCESS')
@@ -769,7 +769,7 @@ test('should search refund tx', async t => {
         {
           id: 1,
           conversationId: '9d43edb0-f141-4f14-8e99-57126f941fde',
-          createdDate: '2035-02-21T15:00:00',
+          createdDate: '2044-07-07T00:00:00',
           status: 'SUCCESS',
           isAfterSettlement: false,
           refundPrice: 20,
@@ -783,12 +783,12 @@ test('should search refund tx', async t => {
       ]
     }
   })
-  
+
   const request = {
     paymentId: 1
   }
 
-  const result = await paymentAdapter.searchRefundTransactions(request)
+  const result = await paymentAdapter.searchPaymentTransactionRefunds(request)
   t.is(result.items[0].id, 1)
   t.is(result.items[0].conversationId, '9d43edb0-f141-4f14-8e99-57126f941fde')
   t.is(result.items[0].status, 'SUCCESS')
@@ -811,7 +811,7 @@ test('should refund payment', async t => {
         {
           id: 1,
           conversationId: '9d43edb0-f141-4f14-8e99-57126f941fde',
-          createdDate: '2035-02-21T15:00:00',
+          createdDate: '2044-07-07T00:00:00',
           status: 'SUCCESS',
           refundPrice: 20,
           refundBankPrice: 20,
@@ -824,7 +824,7 @@ test('should refund payment', async t => {
       ]
     }
   })
-  
+
   const request = {
     paymentId: 1
   }
@@ -849,7 +849,7 @@ test('should retrieve refund', async t => {
     data: {
         id: 1,
         conversationId: '9d43edb0-f141-4f14-8e99-57126f941fde',
-        createdDate: '2035-02-21T15:00:00',
+        createdDate: '2044-07-07T00:00:00',
         status: 'SUCCESS',
         refundPrice: 20,
         refundBankPrice: 20,
@@ -861,7 +861,7 @@ test('should retrieve refund', async t => {
     }
   })
 
-  const result = await paymentAdapter.retrieveRefund(1)
+  const result = await paymentAdapter.retrievePaymentRefund(1)
   t.is(result.id, 1)
   t.is(result.conversationId, '9d43edb0-f141-4f14-8e99-57126f941fde')
   t.is(result.status, 'SUCCESS')
@@ -881,7 +881,7 @@ test('should send crossbooking', async t => {
     data: {
         id: 1,
         price: 100,
-        createdDate: '2035-02-21T15:00:00',
+        createdDate: '2044-07-07T00:00:00',
         status: 'SUCCESS',
         transactionStatus: 'WAITING_FOR_PAYOUT'
     }
@@ -907,7 +907,7 @@ test('should receive crossbooking', async t => {
     data: {
         id: 1,
         price: 100,
-        createdDate: '2035-02-21T15:00:00',
+        createdDate: '2044-07-07T00:00:00',
         status: 'SUCCESS',
         transactionStatus: 'WAITING_FOR_PAYOUT'
     }
@@ -942,7 +942,7 @@ test('should delete stored card', async t => {
   const scope = nock('http://localhost:8000')
   .delete(`/payment/v1/cards?${queryString}`)
   .reply(204);
-  
+
   await paymentAdapter.deleteStoredCard(request)
   t.is(1,1)
 });
@@ -957,10 +957,10 @@ test('should search stored cards', async t => {
           id: 1,
           cardUserKey: 'de050909-39a9-473c-a81a-f186dd55cfef',
           cardToken: 'f13129c4-55b2-4055-8c94-60c0d8c51a3b',
-          binNumber: 402277,
-          lastFourDigits: 4026,
-          expireYear: 2030,
-          expireMonth: 10,
+          binNumber: '402277',
+          lastFourDigits: '4026',
+          expireYear: '2030',
+          expireMonth: '10',
           cardHolderName: 'Berkay Dincer',
           cardAlias: 'test card',
           cardType: 'CREDIT_CARD',
@@ -972,10 +972,10 @@ test('should search stored cards', async t => {
           id: 2,
           cardUserKey: 'ee050909-39a9-473c-a81a-f186dd55cfed',
           cardToken: 'fa3129c4-55b2-4055-8c94-60c0d8c51a3e',
-          binNumber: 402276,
-          lastFourDigits: 4025,
-          expireYear: 2029,
-          expireMonth: 09,
+          binNumber: '402276',
+          lastFourDigits: '4025',
+          expireYear: '2029',
+          expireMonth: '09',
           cardHolderName: 'Berkay Dincer 2',
           cardAlias: 'test card 2',
           cardType: 'CREDIT_CARD',
@@ -992,15 +992,15 @@ test('should search stored cards', async t => {
     size: 10,
     cardAssociation: 'MASTER_CARD'
   };
-  
+
   const result = await paymentAdapter.searchStoredCards(request)
   t.is(result.items[0].id, 1)
   t.is(result.items[0].cardUserKey,'de050909-39a9-473c-a81a-f186dd55cfef')
   t.is(result.items[0].cardToken, 'f13129c4-55b2-4055-8c94-60c0d8c51a3b')
-  t.is(result.items[0].binNumber, 402277)
-  t.is(result.items[0].lastFourDigits, 4026)
-  t.is(result.items[0].expireYear, 2030)
-  t.is(result.items[0].expireMonth, 10)
+  t.is(result.items[0].binNumber, '402277')
+  t.is(result.items[0].lastFourDigits, '4026')
+  t.is(result.items[0].expireYear, '2030')
+  t.is(result.items[0].expireMonth, '10')
   t.is(result.items[0].cardHolderName,'Berkay Dincer')
   t.is(result.items[0].cardAlias,'test card')
   t.is(result.items[0].cardType,'CREDIT_CARD')
@@ -1011,10 +1011,10 @@ test('should search stored cards', async t => {
   t.is(result.items[1].id, 2)
   t.is(result.items[1].cardUserKey,'ee050909-39a9-473c-a81a-f186dd55cfed')
   t.is(result.items[1].cardToken, 'fa3129c4-55b2-4055-8c94-60c0d8c51a3e')
-  t.is(result.items[1].binNumber, 402276)
-  t.is(result.items[1].lastFourDigits, 4025)
-  t.is(result.items[1].expireYear, 2029)
-  t.is(result.items[1].expireMonth, 09)
+  t.is(result.items[1].binNumber, '402276')
+  t.is(result.items[1].lastFourDigits, '4025')
+  t.is(result.items[1].expireYear, '2029')
+  t.is(result.items[1].expireMonth, '09')
   t.is(result.items[1].cardHolderName,'Berkay Dincer 2')
   t.is(result.items[1].cardAlias,'test card 2')
   t.is(result.items[1].cardType,'CREDIT_CARD')

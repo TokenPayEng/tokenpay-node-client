@@ -1,7 +1,9 @@
+import Currency from '../model/Currency';
+
 type CrossBookingRequest = {
   reason: string;
   price: number;
-  currency: string;
+  currency: Currency;
   subMerchantId: number;
 };
 

@@ -124,7 +124,7 @@ var request = {
   card: {
     cardHolderName: 'Ahmet Mehmet',
     cardNumber: '5406670000000009',
-    expireYear: '2035',
+    expireYear: '2044',
     expireMonth: '11',
     cvc: '123'
   },
@@ -152,7 +152,7 @@ var request = {
 
 tokenPay.payment().createPayment(request)
   .then(function(result) {
-    console.log('Payment successful', result);
+    console.info('Payment successful', result);
   })
   .catch(function(err) {
     console.error('Payment failed', err);
@@ -169,7 +169,7 @@ For all adapters in the `TokenPayClient`, their purposes, accessors, as well as 
 | Adapter Name | Purpose | Accessor | Import Path |
 |--------------|---------|----------|-------------|
 | `InstallmentAdapter` | Retrieving per-installment pricing information based on installment count or BIN number | `installment()` | `@tokenpay/tokenpay/adapters/InstallmentAdapter` |
-| `OnboardingAdapter` | Conducting CRUD operations on buyers and submerchants | `onboarding()` | `@tokenpay/tokenpay/adapters/OnboardingAdapter` |
+| `OnboardingAdapter` | Conducting CRUD operations on buyers and sub merchants | `onboarding()` | `@tokenpay/tokenpay/adapters/OnboardingAdapter` |
 | `PaymentAdapter` | Conducting payments, retrieving payment information, managing stored cards | `payment()` | `@tokenpay/tokenpay/adapters/PaymentAdapter` |
 | `SettlementReportingAdapter` | Retrieving information on settlements | `settlementReporting()` | `@tokenpay/tokenpay/adapters/SettlementReportingAdapter` |
 

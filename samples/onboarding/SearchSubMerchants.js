@@ -1,23 +1,20 @@
 const TokenPay = require('../../dist');
 
-// Example: Search Submerchants
-// Retrieves a submerchant by their ID
-
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 const request = {
-  name: 'tarman',
+  name: 'demir',
   page: 0,
   size: 25,
-  subMerchantExternalId: '193184',
-  subMerchantIds: [7, 8],
+  subMerchantExternalId: '5fd3e767-b850-4d70-bcdf-d3c42aab8b09',
+  subMerchantIds: [1, 2],
   subMerchantType: TokenPay.Model.SubMerchantType.LimitedOrStockJointCompany
 };
 
 tokenPay.onboarding().searchSubMerchants(request)
-  .then(result => console.info('Retrieved submerchant search results', result))
-  .catch(err => console.error('Failed to search submerchants', err));
+  .then(result => console.info('Retrieved sub merchant search results', result))
+  .catch(err => console.error('Failed to search sub merchants', err));

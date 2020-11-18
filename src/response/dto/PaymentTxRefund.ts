@@ -1,9 +1,9 @@
 import PaymentType from '../../model/PaymentType'
 import RefundStatus from '../../model/RefundStatus'
 import RefundDestinationType from '../../model/RefundDestinationType'
-import ErrorDto from './ErrorDto'
+import Error from './Error'
 
-export type PaymentTxRefund = {
+type PaymentTxRefund = {
   id: number;
   createdDate: Date;
   refundStatus: RefundStatus ;
@@ -14,7 +14,7 @@ export type PaymentTxRefund = {
   paymentType: PaymentType;
   conversationId: string;
   isAfterSettlement: boolean;
-  error: ErrorDto;
+  error: Error;
 };
 
 export default PaymentTxRefund;

@@ -38,7 +38,7 @@ function isConstructor(fn) {
 
 function testSearch(callback) {
   tokenPay.payment()
-    .search({minPrice: 100, maxPrice: 150})
+    .searchPayments({minPrice: 100, maxPrice: 150})
     .then(function(results) {
       callback(null, {success: true, totalSize: results.totalSize});
     })
@@ -63,4 +63,4 @@ assert(Object.keys(TokenPay.Adapter).length > 0, 'TokenPay.Adapter must not be e
 assert(!!TokenPay.TokenPayError, 'TokenPay.TokenPayError must not be falsy');
 assert(isConstructor(TokenPay.Client), 'TokenPay.TokenPayError must be a constructor');
 
-assertAsync(testSearch, 'PaymentAdapter::search() should execute normally even if it cannot access the server');
+assertAsync(testSearch, 'PaymentAdapter::searchPayments() should execute normally even if it cannot access the server');

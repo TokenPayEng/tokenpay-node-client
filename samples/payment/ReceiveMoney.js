@@ -1,19 +1,16 @@
 const TokenPay = require('../../dist');
 
-// Example: Receive Money
-// Receives a particular amount of money from a given submerchant
-
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 const request = {
-  reason: 'İşgaliye Harcı',
+  reason: 'Receive Money',
   price: 100,
   currency: TokenPay.Model.Currency.TRY,
-  subMerchantId: 3
+  subMerchantId: 1
 };
 
 tokenPay.payment().receiveMoney(request)

@@ -43,8 +43,8 @@ test('should retrieve installments', async t => {
     price: 40.8080,
     currency: 'TRY'
   };
-  
-  const result = await installmentAdapter.retrieveInstallments(request)
+
+  const result = await installmentAdapter.searchInstallments(request)
   t.is(result.binNumber, '123456')
   t.is(result.price, 40.8080)
   t.is(result.cardType, 'CREDIT_CARD')
@@ -58,7 +58,7 @@ test('should retrieve installments', async t => {
   t.is(result.installmentPrices[1].installmentNumber, 2)
 });
 
-test('should check bin number', async t => {
+test('should retrieve bin number', async t => {
   const scope = nock('http://localhost:8000')
   .get('/installment/v1/bins/123456')
   .reply(200, {
@@ -72,8 +72,8 @@ test('should check bin number', async t => {
       commercial: true
     }
   });
-  
-  const result = await installmentAdapter.checkBinNumber('123456')
+
+  const result = await installmentAdapter.retrieveBinNumber('123456')
   t.is(result.binNumber, '123456')
   t.is(result.cardType, 'CREDIT_CARD')
   t.is(result.cardAssociation, 'MASTER_CARD')

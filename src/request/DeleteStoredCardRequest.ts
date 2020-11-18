@@ -1,4 +1,4 @@
-export type DeleteStoredCardRequest = {
+type DeleteStoredCardRequest = {
   cardUserKey: string;
   cardToken: string;
 };

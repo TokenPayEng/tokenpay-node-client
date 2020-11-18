@@ -1,19 +1,17 @@
 const TokenPay = require('../../dist');
 
-// Example: Search Cross-bookings
-// Searches for cross-bookings that match the given criteria
-
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'http://localhost:8000'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr'
 });
 
 const request = {
-  destinationMerchantId: 3,
+  destinationMerchantId: 2,
   destinationMerchantType: TokenPay.Model.MerchantType.SubMerchant,
   sourceMerchantId: 1,
   sourceMerchantType: TokenPay.Model.MerchantType.Merchant,
+  transactionStatus: TokenPay.Model.CrossBookingTransactionStatus.WaitingForPayout,
   page: 0,
   size: 25
 };
