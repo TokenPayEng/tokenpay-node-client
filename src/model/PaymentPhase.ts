@@ -1,7 +1,5 @@
 enum PaymentPhase {
-  Auth = 'AUTH',
-  PreAuth = 'PRE_AUTH',
-  PostAuth = 'POST_AUTH'
+  Auth = 'AUTH'
 }
 
 export default PaymentPhase;
