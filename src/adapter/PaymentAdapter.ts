@@ -1,3 +1,4 @@
+import InitThreeDsPaymentRequest from '../request/InitThreeDsPaymentRequest';
 import {ClientCreationOptions} from '../lib/HttpClient';
 
 import ApprovePaymentTransactionsRequest from '../request/ApprovePaymentTransactionsRequest';
@@ -52,7 +53,7 @@ export default class PaymentAdapter extends BaseAdapter {
     return this._client.post('/payment/v1/payment-transactions/disapprove', request);
   }
 
-  async init3DSPayment(request: CreatePaymentRequest): Promise<InitThreeDSPaymentResponse> {
+  async init3DSPayment(request: InitThreeDsPaymentRequest): Promise<InitThreeDSPaymentResponse> {
     return this._client.post('/payment/v1/card-payments/3ds-init', request);
   }
 

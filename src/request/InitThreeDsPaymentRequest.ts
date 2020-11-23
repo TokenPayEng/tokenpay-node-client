@@ -5,7 +5,7 @@ import PaymentGroup from '../model/PaymentGroup';
 import {Card} from './dto/Card';
 import PaymentItem from './dto/PaymentItem';
 
-type CreatePaymentRequest = {
+type InitThreeDsPaymentRequest = {
   price: number;
   paidPrice: number;
   walletPrice: number;
@@ -14,8 +14,9 @@ type CreatePaymentRequest = {
   currency: Currency;
   paymentGroup: PaymentGroup;
   conversationId: string;
+  callbackUrl?: string;
   card?: Card;
   items: PaymentItem[];
 };
 
-export default CreatePaymentRequest;
+export default InitThreeDsPaymentRequest;
