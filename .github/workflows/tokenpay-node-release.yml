@@ -1,7 +1,7 @@
 name: Release TokenPay Node.js Client
 on:
   release:
-    types: [created]
+    types: [published]
 jobs:
   build:
     runs-on: ubuntu-latest
