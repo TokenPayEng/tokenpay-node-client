@@ -68,7 +68,6 @@ test('createSubMerchant() should create sub merchant', async t => {
 
 test('updateSubMerchant() should update sub merchant', async t => {
   const request = {
-    id: 42,
     name: 'Luke Skywalker',
     address: 'Tatooine',
     email: 'luke@skywalker.com',
@@ -101,10 +100,10 @@ test('updateSubMerchant() should update sub merchant', async t => {
   };
 
   nock('http://localhost:8000')
-    .put('/onboarding/v1/sub-merchants', request)
+    .put('/onboarding/v1/sub-merchants/42', request)
     .reply(200, {data: response});
 
-  const result = await onboardingAdapter.updateSubMerchant(request);
+  const result = await onboardingAdapter.updateSubMerchant(42, request);
   t.is(result.id, 42);
   t.is(result.status, TokenPay.Model.Status.Active);
   t.is(result.name, 'Luke Skywalker');
