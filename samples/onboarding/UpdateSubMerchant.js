@@ -7,12 +7,11 @@ const tokenPay = new TokenPay.Client({
 });
 
 const request = {
-  id: 1,
   contactName: 'Haluk',
   contactSurname: 'Demir',
   email: 'haluk.demir@example.com',
   gsmNumber: '905551111111',
-  iban: 'TR270006701000000000000000',
+  iban: 'TR930006701000000001111111',
   identityNumber: '11111111110',
   legalCompanyTitle: 'Dem Zeytinyağı Üretim Ltd. Şti.',
   name: 'Dem Zeytinyağı Üretim Ltd. Şti.',
@@ -21,6 +20,6 @@ const request = {
   address: 'Suadiye Mah. Örnek Cd. No:23, 34740 Kadıköy/İstanbul'
 };
 
-tokenPay.onboarding().updateSubMerchant(request)
+tokenPay.onboarding().updateSubMerchant(1, request)
   .then(result => console.info('Sub merchant updated', result))
   .catch(err => console.error('Failed to update sub merchant', err));

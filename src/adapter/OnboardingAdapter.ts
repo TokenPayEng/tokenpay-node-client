@@ -21,8 +21,8 @@ export default class OnboardingAdapter extends BaseAdapter {
     return this._client.post('/onboarding/v1/sub-merchants', request);
   }
 
-  async updateSubMerchant(request: UpdateSubMerchantRequest): Promise<SubMerchantResponse> {
-    return this._client.put('/onboarding/v1/sub-merchants', request);
+  async updateSubMerchant(subMerchantId: number, request: UpdateSubMerchantRequest): Promise<SubMerchantResponse> {
+    return this._client.put(`/onboarding/v1/sub-merchants/${subMerchantId}`, request);
   }
 
   async retrieveSubMerchant(subMerchantId: number): Promise<SubMerchantResponse> {

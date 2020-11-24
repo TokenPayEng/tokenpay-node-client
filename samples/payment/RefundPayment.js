@@ -8,7 +8,6 @@ const tokenPay = new TokenPay.Client({
 
 const request = {
   paymentId: 1,
-  conversationId: '456d1297-908e-4bd6-a13b-4be31a6e47d5',
   refundDestinationType: TokenPay.Model.RefundDestinationType.Card,
 };
 

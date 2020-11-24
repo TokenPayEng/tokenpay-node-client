@@ -7,10 +7,9 @@ const tokenPay = new TokenPay.Client({
 });
 
 const request = {
-  name: 'demir',
+  name: 'Zeytinyağı Üretim',
   page: 0,
   size: 25,
-  subMerchantExternalId: '5fd3e767-b850-4d70-bcdf-d3c42aab8b09',
   subMerchantIds: [1, 2],
   subMerchantType: TokenPay.Model.SubMerchantType.LimitedOrStockJointCompany
 };

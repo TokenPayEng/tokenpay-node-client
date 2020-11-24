@@ -11,8 +11,8 @@ const request = {
   cardBankName: 'YAPI VE KREDİ BANKASI A.Ş.',
   cardBrand: 'World',
   cardAssociation: TokenPay.Model.CardAssociation.MasterCard,
-  cardToken: 'fac377f2-ab15-4696-88d2-5e71b27ec378',
-  cardUserKey: '11a078c4-3c32-4796-90b1-51ee5517a212',
+  cardToken: 'd9b19d1a-243c-43dc-a498-add08162df72',
+  cardUserKey: 'c115ecdf-0afc-4d83-8a1b-719c2af19cbd',
   cardType: TokenPay.Model.CardType.CreditCard
 };
 

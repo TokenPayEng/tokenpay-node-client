@@ -8,7 +8,7 @@ const tokenPay = new TokenPay.Client({
 
 const request = {
   paymentTransactionIds: [1, 2],
-  isTransactional: false
+  isTransactional: true
 };
 
 tokenPay.payment().disapprovePaymentTransactions(request)

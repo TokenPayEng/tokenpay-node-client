@@ -1,3 +1,4 @@
+import PaymentPhase from '../model/PaymentPhase';
 import Currency from '../model/Currency';
 import Installment from '../model/Installment';
 import PaymentGroup from '../model/PaymentGroup';
@@ -13,6 +14,7 @@ type CreatePaymentRequest = {
   buyerId?: number;
   currency: Currency;
   paymentGroup: PaymentGroup;
+  paymentPhase: PaymentPhase;
   conversationId: string;
   card?: Card;
   items: PaymentItem[];

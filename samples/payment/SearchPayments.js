@@ -1,4 +1,6 @@
 const TokenPay = require('../../dist');
+const { default: Currency } = require('../../dist/model/Currency');
+const { default: PaymentStatus } = require('../../dist/model/PaymentStatus');
 
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
@@ -7,7 +9,8 @@ const tokenPay = new TokenPay.Client({
 });
 
 const request = {
-  paymentIds: [1, 2, 3]
+  currency: Currency.TRY,
+  paymentStatus: PaymentStatus.Success
 };
 
 tokenPay.payment().searchPayments(request)

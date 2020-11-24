@@ -9,8 +9,8 @@ const tokenPay = new TokenPay.Client({
 const request = {
   settlementFileId: 1,
   settlementType: TokenPay.Model.SettlementType.Settlement,
-  startDate: new Date(),
-  endDate: new Date(Date.now() - 24 * 60 * 60 * 1000)
+  startDate: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000),
+  endDate: new Date()
 };
 
 tokenPay.settlementReporting().searchPayoutCompletedTransactions(request)

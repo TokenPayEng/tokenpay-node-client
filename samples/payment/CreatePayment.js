@@ -1,4 +1,5 @@
 const TokenPay = require('../../dist');
+const { default: PaymentPhase } = require('../../dist/model/PaymentPhase');
 
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
@@ -13,7 +14,8 @@ const request = {
   installment: 1,
   conversationId: '456d1297-908e-4bd6-a13b-4be31a6e47d5',
   currency: TokenPay.Model.Currency.TRY,
-  paymentGroup: TokenPay.Model.PaymentGroup.Product,
+  paymentGroup: TokenPay.Model.PaymentGroup.ListingOrSubscription,
+  paymentPhase: PaymentPhase.Auth,
   card: {
     cardHolderName: 'Haluk Demir',
     cardNumber: '5258640000000001',
@@ -25,20 +27,17 @@ const request = {
     {
       name: 'Item 1',
       price: 30.0,
-      subMerchantId: 1,
-      subMerchantPrice: 27.0
+      subMerchantId: 1
     },
     {
       name: 'Item 2',
       price: 50.0,
-      subMerchantId: 1,
-      subMerchantPrice: 42.0
+      subMerchantId: 1
     },
     {
       name: 'Item 3',
       price: 20.0,
-      subMerchantId: 1,
-      subMerchantPrice: 18.0
+      subMerchantId: 1
     }
   ]
 };
