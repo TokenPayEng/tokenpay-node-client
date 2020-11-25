@@ -1,5 +1,5 @@
 {
-  "name": "@tokenpay/tokenpay",
+  "name": "@tokenpayeng/tokenpay",
   "version": "0.0.1",
   "description": "TokenPay API JavaScript Client",
   "main": "dist/index.js",
