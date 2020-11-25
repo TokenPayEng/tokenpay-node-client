@@ -3,7 +3,7 @@ import CardType from '../../model/CardType';
 
 import InstallmentPrice from './InstallmentPrice';
 
-type InstallmentResponse = {
+type Installment = {
   binNumber: string;
   price: number;
   cardType: CardType;
@@ -16,4 +16,4 @@ type InstallmentResponse = {
   installmentPrices: InstallmentPrice[];
 };
 
-export default InstallmentResponse;
+export default Installment;
