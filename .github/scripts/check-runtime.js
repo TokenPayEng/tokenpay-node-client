@@ -1,11 +1,11 @@
 var process = require('process');
 
-var TokenPay = require('@tokenpay/tokenpay');
+var TokenPay = require('@tokenpayeng/tokenpay');
 
 var tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'https://google.com'
+  baseUrl: 'https://api-gateway.tokenpay.com.tr/status'
 });
 
 function assert(expr, message) {

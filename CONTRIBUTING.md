@@ -1,7 +1,7 @@
 # Contributing to TokenPay Node Client
-As an open-source project, anyone can contribute to the development of `@tokenpay/tokenpay`. If you decide to do so, please be aware of the guidelines outlined below.
+As an open-source project, anyone can contribute to the development of `@tokenpayeng/tokenpay`. If you decide to do so, please be aware of the guidelines outlined below.
 
-`@tokenpay/tokenpay` is written in TypeScript, which can be considered as a superset of JavaScript, so in order to contribute to the project, some familiarity with type systems and overall JavaScript knowledge is welcome.
+`@tokenpayeng/tokenpay` is written in TypeScript, which can be considered as a superset of JavaScript, so in order to contribute to the project, some familiarity with type systems and overall JavaScript knowledge is welcome.
 
 ## Prerequisites
 This project uses [ava](https://github.com/avajs/ava) as its test runner, which in turn uses [yargs-parser](https://github.com/yargs/yargs-parser) to parse command-line arguments.

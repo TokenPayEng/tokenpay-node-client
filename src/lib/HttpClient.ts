@@ -21,7 +21,7 @@ export class HttpClient {
   private readonly _client: AxiosInstance;
   private readonly _options: ClientOptions;
 
-  constructor({apiKey, secretKey, baseUrl = 'https://api.tokenpay.com.tr'}: ClientCreationOptions = {}) {
+  constructor({apiKey, secretKey, baseUrl = 'https://api-gateway.tokenpay.com.tr'}: ClientCreationOptions = {}) {
     this._options = {apiKey, secretKey, baseUrl};
     this._client = axios.create({baseURL: baseUrl});
 

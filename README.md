@@ -7,7 +7,7 @@ This repo contains the Node.js client for TokenPay API.
 
 ## Installation
 ```bash
-$ npm install @tokenpay/tokenpay
+$ npm install @tokenpayeng/tokenpay
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ To access the TokenPay API you'll first need to obtain API credentials (e.g. an 
 Once you've obtained your API credentials, you can start using TokenPay by instantiating a `TokenPayClient` with your credentials.
 
 ```js
-const TokenPay = require('@tokenpay/tokenpay');
+const TokenPay = require('@tokenpayeng/tokenpay');
 
 const tokenPay = new TokenPay.Client({
   apiKey: '<YOUR API KEY>',
@@ -26,27 +26,27 @@ const tokenPay = new TokenPay.Client({
 ...
 ```
 
-By default the TokenPay client connects to the production API servers at `https://api.tokenpay.com.tr`. For testing purposes, please use the sandbox URL `https://sandbox-api.tokenpay.com.tr` using the .
+By default the TokenPay client connects to the production API servers at `https://api-gateway.tokenpay.com.tr`. For testing purposes, please use the sandbox URL `https://sandbox-api-gateway.tokenpay.com.tr` using the .
 
 ```js
-const TokenPay = require('@tokenpay/tokenpay');
+const TokenPay = require('@tokenpayeng/tokenpay');
 
 const tokenPay = new TokenPay.Client({
   apiKey: '<YOUR API KEY>',
   secretKey: '<YOUR SECRET KEY>',
-  baseUrl: 'https://sandbox-api.tokenpay.com.tr'
+  baseUrl: 'https://sandbox-api-gateway.tokenpay.com.tr'
 });
 
 ...
 ```
 
 ### Bulk Import vs. Individual Imports
-The root export of the project (e.g. `@tokenpay/tokenpay`) is designed primarily for CommonJS-style bulk imports, but the project also exports its modules individually, so you can also import them directly in ES6 fashion. On development environments where a transpiler such as Babel or TypeScript exists, we recommend using this approach.
+The root export of the project (e.g. `@tokenpayeng/tokenpay`) is designed primarily for CommonJS-style bulk imports, but the project also exports its modules individually, so you can also import them directly in ES6 fashion. On development environments where a transpiler such as Babel or TypeScript exists, we recommend using this approach.
 
 Keep in mind that when using direct imports, you'll have to import necessary modules individually. So this code:
 
 ```js
-const TokenPay = require('@tokenpay/tokenpay');
+const TokenPay = require('@tokenpayeng/tokenpay');
 
 const tokenPay = new TokenPay.Client({...});
 tokenPay.payment().createPayment({
@@ -60,8 +60,8 @@ tokenPay.payment().createPayment({
 becomes like this:
 
 ```js
-import TokenPayClient from '@tokenpay/tokenpay/TokenPayClient';
-import Currency from '@tokenpay/tokenpay/model/Currency';
+import TokenPayClient from '@tokenpayeng/tokenpay/TokenPayClient';
+import Currency from '@tokenpayeng/tokenpay/model/Currency';
 
 const tokenPay = new TokenPayClient({...});
 tokenPay.payment().createPayment({
@@ -75,11 +75,11 @@ tokenPay.payment().createPayment({
 Also, since we make use of default exports, if you wish to import these modules directly in CommonJS fashion (e.g. `require()`), then make sure you're accessing the `default` keyword of the module.
 
 ```js
-const TokenPayClient = require('@tokenpay/tokenpay/TokenPayClient'); // this won't work
+const TokenPayClient = require('@tokenpayeng/tokenpay/TokenPayClient'); // this won't work
 
 ...
 
-const TokenPayClient = require('@tokenpay/tokenpay/TokenPayClient').default; // however, this will
+const TokenPayClient = require('@tokenpayeng/tokenpay/TokenPayClient').default; // however, this will
 ```
 
 ## Examples
@@ -168,10 +168,10 @@ For all adapters in the `TokenPayClient`, their purposes, accessors, as well as 
 
 | Adapter Name | Purpose | Accessor | Import Path |
 |--------------|---------|----------|-------------|
-| `InstallmentAdapter` | Retrieving per-installment pricing information based on installment count or BIN number | `installment()` | `@tokenpay/tokenpay/adapters/InstallmentAdapter` |
-| `OnboardingAdapter` | Conducting CRUD operations on buyers and sub merchants | `onboarding()` | `@tokenpay/tokenpay/adapters/OnboardingAdapter` |
-| `PaymentAdapter` | Conducting payments, retrieving payment information, managing stored cards | `payment()` | `@tokenpay/tokenpay/adapters/PaymentAdapter` |
-| `SettlementReportingAdapter` | Retrieving information on settlements | `settlementReporting()` | `@tokenpay/tokenpay/adapters/SettlementReportingAdapter` |
+| `InstallmentAdapter` | Retrieving per-installment pricing information based on installment count or BIN number | `installment()` | `@tokenpayeng/tokenpay/adapters/InstallmentAdapter` |
+| `OnboardingAdapter` | Conducting CRUD operations on buyers and sub merchants | `onboarding()` | `@tokenpayeng/tokenpay/adapters/OnboardingAdapter` |
+| `PaymentAdapter` | Conducting payments, retrieving payment information, managing stored cards | `payment()` | `@tokenpayeng/tokenpay/adapters/PaymentAdapter` |
+| `SettlementReportingAdapter` | Retrieving information on settlements | `settlementReporting()` | `@tokenpayeng/tokenpay/adapters/SettlementReportingAdapter` |
 
 ## Development
 To contribute to the project, please see our guidelines at [CONTRIBUTING](./CONTRIBUTING.md)
