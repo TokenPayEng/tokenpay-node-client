@@ -6,7 +6,7 @@ import PaymentCard from './dto/PaymentCard';
 import PaymentRefund from './dto/PaymentRefund';
 import PaymentTx from './dto/PaymentTx';
 
-type SearchPaymentsResponse = {
+type PaymentDetailResponse = {
   id: number;
   createdDate: Date;
   updatedDate: Date;
@@ -24,4 +24,4 @@ type SearchPaymentsResponse = {
   paymentTxs: PaymentTx[];
 };
 
-export default SearchPaymentsResponse;
+export default PaymentDetailResponse;

@@ -15,15 +15,15 @@ import SearchPaymentsRequest from '../request/SearchPaymentsRequest';
 import SearchPaymentTransactionRefundsRequest from '../request/SearchPaymentTransactionRefundsRequest';
 import SearchStoredCardsRequest from '../request/SearchStoredCardsRequest';
 
-import ApprovePaymentTransactionResponse from '../response/ApprovePaymentTransactionResponse';
+import PaymentTransactionApprovalListResponse from '../response/PaymentTransactionApprovalListResponse';
 import CrossBookingTransactionResponse from '../response/CrossBookingTransactionResponse';
 import DataResponse from '../response/DataResponse';
-import DisapprovePaymentTransactionResponse from '../response/DisapprovePaymentTransactionResponse';
 import InitThreeDSPaymentResponse from '../response/InitThreeDSPaymentResponse';
 import PaymentRefundResponse from '../response/PaymentRefundResponse';
 import PaymentResponse from '../response/PaymentResponse';
 import PaymentTransactionRefundResponse from '../response/PaymentTransactionRefundResponse';
-import SearchPaymentsResponse from '../response/SearchPaymentsResponse';
+import PaymentTransactionRefundListResponse from '../response/PaymentTransactionRefundListResponse';
+import PaymentDetailResponse from '../response/PaymentDetailResponse';
 import StoredCardResponse from '../response/StoredCardResponse';
 
 import BaseAdapter from './BaseAdapter';
@@ -37,19 +37,19 @@ export default class PaymentAdapter extends BaseAdapter {
     return this._client.post('/payment/v1/card-payments', request);
   }
 
-  async retrievePayment(id: number): Promise<PaymentResponse> {
+  async retrievePayment(id: number): Promise<PaymentDetailResponse> {
     return this._client.get(`/payment/v1/card-payments/${id}`);
   }
 
-  async searchPayments(request: SearchPaymentsRequest): Promise<DataResponse<SearchPaymentsResponse>> {
+  async searchPayments(request: SearchPaymentsRequest): Promise<DataResponse<PaymentDetailResponse>> {
     return this._client.get('/payment-reporting/v1/payments', request);
   }
 
-  async approvePaymentTransactions(request: ApprovePaymentTransactionsRequest): Promise<DataResponse<ApprovePaymentTransactionResponse>> {
+  async approvePaymentTransactions(request: ApprovePaymentTransactionsRequest): Promise<PaymentTransactionApprovalListResponse> {
     return this._client.post('/payment/v1/payment-transactions/approve', request);
   }
 
-  async disapprovePaymentTransactions(request: DisapprovePaymentTransactionsRequest): Promise<DataResponse<DisapprovePaymentTransactionResponse>> {
+  async disapprovePaymentTransactions(request: DisapprovePaymentTransactionsRequest): Promise<PaymentTransactionApprovalListResponse> {
     return this._client.post('/payment/v1/payment-transactions/disapprove', request);
   }
 
@@ -69,7 +69,7 @@ export default class PaymentAdapter extends BaseAdapter {
     return this._client.get(`/payment/v1/refund-transactions/${refundTxId}`);
   }
 
-  async searchPaymentTransactionRefunds(request: SearchPaymentTransactionRefundsRequest): Promise<DataResponse<PaymentTransactionRefundResponse>> {
+  async searchPaymentTransactionRefunds(request: SearchPaymentTransactionRefundsRequest): Promise<PaymentTransactionRefundListResponse> {
     return this._client.get('/payment/v1/refund-transactions', request);
   }
 
