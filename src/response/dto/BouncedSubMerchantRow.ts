@@ -1,4 +1,4 @@
-type BouncedSubMerchantRowResponse = {
+type BouncedSubMerchantRow = {
   id: number;
   iban: string;
   contactName: string;
@@ -6,4 +6,4 @@ type BouncedSubMerchantRowResponse = {
   legalCompanyTitle: string;
 };
 
-export default BouncedSubMerchantRowResponse;
+export default BouncedSubMerchantRow;

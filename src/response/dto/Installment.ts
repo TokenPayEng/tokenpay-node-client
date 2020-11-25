@@ -1,9 +1,9 @@
-import CardAssociation from '../model/CardAssociation';
-import CardType from '../model/CardType';
+import CardAssociation from '../../model/CardAssociation';
+import CardType from '../../model/CardType';
 
-import InstallmentPrice from './dto/InstallmentPrice';
+import InstallmentPrice from './InstallmentPrice';
 
-type SearchInstallmentsResponse = {
+type InstallmentResponse = {
   binNumber: string;
   price: number;
   cardType: CardType;
@@ -16,4 +16,4 @@ type SearchInstallmentsResponse = {
   installmentPrices: InstallmentPrice[];
 };
 
-export default SearchInstallmentsResponse;
+export default InstallmentResponse;

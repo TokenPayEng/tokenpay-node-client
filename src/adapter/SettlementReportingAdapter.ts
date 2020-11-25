@@ -3,9 +3,9 @@ import {ClientCreationOptions} from '../lib/HttpClient';
 import SearchBouncedSubMerchantRowsRequest from '../request/SearchBouncedSubMerchantRowsRequest';
 import SearchPayoutCompletedTransactionsRequest from '../request/SearchPayoutCompletedTransactionsRequest';
 
-import BouncedSubMerchantRowResponse from '../response/BouncedSubMerchantRowResponse';
+import BouncedSubMerchantRowListResponse from '../response/BouncedSubMerchantRowListResponse';
 import DataResponse from '../response/DataResponse';
-import PayoutCompletedTransactionResponse from '../response/PayoutCompletedTransactionResponse';
+import PayoutCompletedTransactionListResponse from '../response/PayoutCompletedTransactionListResponse';
 
 import BaseAdapter from './BaseAdapter';
 
@@ -14,11 +14,11 @@ export default class SettlementReportingAdapter extends BaseAdapter {
     super(options);
   }
 
-  async searchBouncedSubMerchantRows(request: SearchBouncedSubMerchantRowsRequest): Promise<DataResponse<BouncedSubMerchantRowResponse>> {
+  async searchBouncedSubMerchantRows(request: SearchBouncedSubMerchantRowsRequest): Promise<BouncedSubMerchantRowListResponse> {
     return this._client.get('/settlement-reporting/v1/settlement-file/bounced-sub-merchant-rows', request);
   }
 
-  async searchPayoutCompletedTransactions(request: SearchPayoutCompletedTransactionsRequest): Promise<DataResponse<PayoutCompletedTransactionResponse>> {
+  async searchPayoutCompletedTransactions(request: SearchPayoutCompletedTransactionsRequest): Promise<PayoutCompletedTransactionListResponse> {
     return this._client.get('/settlement-reporting/v1/settlement-file/payout-completed-transactions', request);
   }
 }
