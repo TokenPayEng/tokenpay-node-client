@@ -6,6 +6,7 @@ import PaymentCard from './dto/PaymentCard';
 import PaymentRefund from './dto/PaymentRefund';
 import PaymentTransactionDetail from './dto/PaymentTransactionDetail';
 
+
 type PaymentDetailResponse = {
   id: number;
   createdDate: Date;
