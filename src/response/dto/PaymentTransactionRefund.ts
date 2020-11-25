@@ -2,9 +2,7 @@ import PaymentType from '../../model/PaymentType';
 import RefundDestinationType from '../../model/RefundDestinationType';
 import RefundStatus from '../../model/RefundStatus';
 
-import Error from './Error';
-
-type PaymentTxRefund = {
+type PaymentTransactionRefund = {
   id: number;
   createdDate: Date;
   refundStatus: RefundStatus;
@@ -18,4 +16,4 @@ type PaymentTxRefund = {
   error: Error;
 };
 
-export default PaymentTxRefund;
+export default PaymentTransactionRefund;

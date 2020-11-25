@@ -38,7 +38,7 @@ export default class PaymentAdapter extends BaseAdapter {
   }
 
   async retrievePayment(id: number): Promise<PaymentDetailResponse> {
-    return this._client.get(`/payment/v1/card-payments/${id}`);
+    return this._client.get(`/payment-reporting/v1/payments/${id}`);
   }
 
   async searchPayments(request: SearchPaymentsRequest): Promise<DataResponse<PaymentDetailResponse>> {

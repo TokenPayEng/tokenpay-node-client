@@ -1,10 +1,10 @@
 import TransactionStatus from '../../model/TransactionStatus';
+import PaymentTransactionCard from '../dto/PaymentTransactionCard';
+import PaymentTransactionRefund from '../dto/PaymentTransactionRefund';
 
-import PaymentTxCard from './PaymentTxCard';
-import PaymentTxRefund from './PaymentTxRefund';
 import Payout from './Payout';
 
-type PaymentTx = {
+type PaymentTransactionDetail = {
   id: number;
   createdDate: Date;
   externalId: string;
@@ -20,8 +20,8 @@ type PaymentTx = {
   subMerchantPayoutRate: number;
   subMerchantPayoutAmount: number;
   payout: Payout;
-  paymentTxCard: PaymentTxCard;
-  paymentTxRefunds: PaymentTxRefund[];
+  paymentTransactionCard: PaymentTransactionCard;
+  paymentTransactionRefunds: PaymentTransactionRefund[];
 };
 
-export default PaymentTx;
+export default PaymentTransactionDetail;

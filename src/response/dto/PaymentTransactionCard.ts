@@ -1,7 +1,7 @@
-type PaymentTxCard = {
+type PaymentTransactionCard = {
   merchantCommissionRate: number;
   merchantCommissionRateAmount: number;
   pfCommissionRateAmount: number;
 };
 
-export default PaymentTxCard;
+export default PaymentTransactionCard;

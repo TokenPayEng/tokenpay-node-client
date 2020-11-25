@@ -4,7 +4,8 @@ import PaymentType from '../model/PaymentType';
 
 import PaymentCard from './dto/PaymentCard';
 import PaymentRefund from './dto/PaymentRefund';
-import PaymentTx from './dto/PaymentTx';
+import PaymentTransactionDetail from './dto/PaymentTransactionDetail';
+
 
 type PaymentDetailResponse = {
   id: number;
@@ -21,7 +22,7 @@ type PaymentDetailResponse = {
   conversationId: string;
   paymentCard: PaymentCard;
   paymentRefunds: PaymentRefund[];
-  paymentTxs: PaymentTx[];
+  paymentTransactions: PaymentTransactionDetail[];
 };
 
 export default PaymentDetailResponse;
