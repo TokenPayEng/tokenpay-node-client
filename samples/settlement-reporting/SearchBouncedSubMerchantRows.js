@@ -8,7 +8,7 @@ const tokenPay = new TokenPay.Client({
 
 const request = {
   startDate: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000),
-  endDate: Date.now()
+  endDate: new Date()
 };
 
 tokenPay.settlementReporting().searchBouncedSubMerchantRows(request)
