@@ -2,8 +2,6 @@ import CardAssociation from '../model/CardAssociation';
 import CardType from '../model/CardType';
 
 type StoredCardResponse = {
-  id: number;
-  cardNumber: string;
   binNumber: string;
   lastFourDigits: string;
   expireYear: string;

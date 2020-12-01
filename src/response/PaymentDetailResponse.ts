@@ -11,7 +11,6 @@ type PaymentDetailResponse = {
   id: number;
   createdDate: Date;
   updatedDate: Date;
-  merchantId: number;
   orderId: string;
   price: number;
   paidPrice: number;

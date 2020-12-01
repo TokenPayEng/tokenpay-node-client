@@ -4,7 +4,6 @@ import SearchBouncedSubMerchantRowsRequest from '../request/SearchBouncedSubMerc
 import SearchPayoutCompletedTransactionsRequest from '../request/SearchPayoutCompletedTransactionsRequest';
 
 import BouncedSubMerchantRowListResponse from '../response/BouncedSubMerchantRowListResponse';
-import DataResponse from '../response/DataResponse';
 import PayoutCompletedTransactionListResponse from '../response/PayoutCompletedTransactionListResponse';
 
 import BaseAdapter from './BaseAdapter';
