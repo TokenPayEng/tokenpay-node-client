@@ -1,4 +1,3 @@
-import InitThreeDsPaymentRequest from '../request/InitThreeDsPaymentRequest';
 import {ClientCreationOptions} from '../lib/HttpClient';
 
 import ApprovePaymentTransactionsRequest from '../request/ApprovePaymentTransactionsRequest';
@@ -8,23 +7,26 @@ import CreatePaymentRequest from '../request/CreatePaymentRequest';
 import CrossBookingRequest from '../request/CrossBookingRequest';
 import DeleteStoredCardRequest from '../request/DeleteStoredCardRequest';
 import DisapprovePaymentTransactionsRequest from '../request/DisapprovePaymentTransactionsRequest';
+import InitThreeDsPaymentRequest from '../request/InitThreeDsPaymentRequest';
 import RefundPaymentRequest from '../request/RefundPaymentRequest';
 import RefundPaymentTransactionRequest from '../request/RefundPaymentTransactionRequest';
 import SearchCrossBookingsRequest from '../request/SearchCrossBookingsRequest';
 import SearchPaymentsRequest from '../request/SearchPaymentsRequest';
 import SearchPaymentTransactionRefundsRequest from '../request/SearchPaymentTransactionRefundsRequest';
 import SearchStoredCardsRequest from '../request/SearchStoredCardsRequest';
+import InitCheckoutPaymentRequest from "../request/InitCheckoutPaymentRequest";
 
-import PaymentTransactionApprovalListResponse from '../response/PaymentTransactionApprovalListResponse';
 import CrossBookingTransactionResponse from '../response/CrossBookingTransactionResponse';
 import DataResponse from '../response/DataResponse';
 import InitThreeDSPaymentResponse from '../response/InitThreeDSPaymentResponse';
+import PaymentDetailResponse from '../response/PaymentDetailResponse';
 import PaymentRefundResponse from '../response/PaymentRefundResponse';
 import PaymentResponse from '../response/PaymentResponse';
-import PaymentTransactionRefundResponse from '../response/PaymentTransactionRefundResponse';
+import PaymentTransactionApprovalListResponse from '../response/PaymentTransactionApprovalListResponse';
 import PaymentTransactionRefundListResponse from '../response/PaymentTransactionRefundListResponse';
-import PaymentDetailResponse from '../response/PaymentDetailResponse';
+import PaymentTransactionRefundResponse from '../response/PaymentTransactionRefundResponse';
 import StoredCardResponse from '../response/StoredCardResponse';
+import InitCheckoutPaymentResponse from "../response/InitCheckoutPaymentResponse";
 
 import BaseAdapter from './BaseAdapter';
 
@@ -59,6 +61,14 @@ export default class PaymentAdapter extends BaseAdapter {
 
   async complete3DSPayment(request: CompleteThreeDSPaymentRequest): Promise<PaymentResponse> {
     return this._client.post('/payment/v1/card-payments/3ds-complete', request);
+  }
+
+  async initCheckoutPayment(request: InitCheckoutPaymentRequest): Promise<InitCheckoutPaymentResponse> {
+    return this._client.post('/payment/v1/checkout-payment/init', request);
+  }
+
+  async retrieveCheckoutPayment(token: string): Promise<PaymentResponse> {
+    return this._client.get(`/payment/v1/checkout-payment?token=${token}`);
   }
 
   async refundPaymentTransaction(request: RefundPaymentTransactionRequest): Promise<PaymentTransactionRefundResponse> {
