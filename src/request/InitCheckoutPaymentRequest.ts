@@ -15,6 +15,7 @@ type InitCheckoutPaymentRequest = {
   currency: Currency;
   paymentGroup: PaymentGroup;
   paymentPhase: PaymentPhase;
+  cardUserKey: string;
   conversationId: string;
   items: PaymentItem[];
 };
