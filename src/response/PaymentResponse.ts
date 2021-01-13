@@ -6,6 +6,7 @@ import PaymentGroup from '../model/PaymentGroup';
 import PaymentPhase from '../model/PaymentPhase';
 import PaymentStatus from '../model/PaymentStatus';
 import PaymentType from '../model/PaymentType';
+import ConnectorType from '../model/ConnectorType';
 
 import PaymentTransaction from './dto/PaymentTransaction';
 
@@ -22,6 +23,7 @@ type PaymentResponse = {
   paymentType: PaymentType;
   paymentGroup: PaymentGroup;
   paymentStatus: PaymentStatus;
+  connectorType: ConnectorType;
   paymentPhase: PaymentPhase;
   isThreeDS: boolean;
   merchantCommissionRate: number;

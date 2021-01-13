@@ -17,6 +17,7 @@ type CreatePaymentRequest = {
   paymentPhase: PaymentPhase;
   conversationId: string;
   card?: Card;
+  posAlias: string;
   items: PaymentItem[];
 };
 
