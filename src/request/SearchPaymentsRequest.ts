@@ -1,6 +1,7 @@
 import Currency from '../model/Currency';
 import Installment from '../model/Installment';
 import PaymentStatus from '../model/PaymentStatus';
+import ConnectorType from '../model/ConnectorType';
 
 type SearchPaymentsRequest = {
   page?: number;
@@ -11,6 +12,7 @@ type SearchPaymentsRequest = {
   subMerchantIds?: number[];
   itemExternalIds?: string[];
   paymentStatus?: PaymentStatus;
+  connectorType?: ConnectorType;
 
   currency?: Currency;
   binNumber?: string;
