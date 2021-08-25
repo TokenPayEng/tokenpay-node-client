@@ -7,17 +7,19 @@ import CreatePaymentRequest from '../request/CreatePaymentRequest';
 import CrossBookingRequest from '../request/CrossBookingRequest';
 import DeleteStoredCardRequest from '../request/DeleteStoredCardRequest';
 import DisapprovePaymentTransactionsRequest from '../request/DisapprovePaymentTransactionsRequest';
+import InitCheckoutPaymentRequest from '../request/InitCheckoutPaymentRequest';
 import InitThreeDsPaymentRequest from '../request/InitThreeDsPaymentRequest';
+import PostAuthPaymentRequest from '../request/PostAuthPaymentRequest';
 import RefundPaymentRequest from '../request/RefundPaymentRequest';
 import RefundPaymentTransactionRequest from '../request/RefundPaymentTransactionRequest';
 import SearchCrossBookingsRequest from '../request/SearchCrossBookingsRequest';
 import SearchPaymentsRequest from '../request/SearchPaymentsRequest';
 import SearchPaymentTransactionRefundsRequest from '../request/SearchPaymentTransactionRefundsRequest';
 import SearchStoredCardsRequest from '../request/SearchStoredCardsRequest';
-import InitCheckoutPaymentRequest from "../request/InitCheckoutPaymentRequest";
 
 import CrossBookingTransactionResponse from '../response/CrossBookingTransactionResponse';
 import DataResponse from '../response/DataResponse';
+import InitCheckoutPaymentResponse from '../response/InitCheckoutPaymentResponse';
 import InitThreeDSPaymentResponse from '../response/InitThreeDSPaymentResponse';
 import PaymentDetailResponse from '../response/PaymentDetailResponse';
 import PaymentRefundResponse from '../response/PaymentRefundResponse';
@@ -26,7 +28,6 @@ import PaymentTransactionApprovalListResponse from '../response/PaymentTransacti
 import PaymentTransactionRefundListResponse from '../response/PaymentTransactionRefundListResponse';
 import PaymentTransactionRefundResponse from '../response/PaymentTransactionRefundResponse';
 import StoredCardResponse from '../response/StoredCardResponse';
-import InitCheckoutPaymentResponse from "../response/InitCheckoutPaymentResponse";
 
 import BaseAdapter from './BaseAdapter';
 
@@ -113,5 +114,9 @@ export default class PaymentAdapter extends BaseAdapter {
 
   async searchStoredCards(request: SearchStoredCardsRequest): Promise<DataResponse<StoredCardResponse>> {
     return this._client.get('/payment/v1/cards', request);
+  }
+
+  async postAuthPayment(paymentId: number, request: PostAuthPaymentRequest): Promise<PaymentResponse> {
+    return this._client.post(`/payment/v1/card-payments/${paymentId}/post-auth`, request);
   }
 }

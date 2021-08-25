@@ -2,8 +2,6 @@ import PaymentPhase from '../model/PaymentPhase';
 import Currency from '../model/Currency';
 import Installment from '../model/Installment';
 import PaymentGroup from '../model/PaymentGroup';
-
-import {Card} from './dto/Card';
 import PaymentItem from './dto/PaymentItem';
 
 type InitCheckoutPaymentRequest = {
