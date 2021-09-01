@@ -26,10 +26,6 @@ export default class LinkAdapter extends BaseAdapter {
     return this._client.get(`/tokenlink/v1/products/${id}`);
   }
 
-  async deleteLink(id: number): Promise<void> {
-    await this._client.delete(`/tokenlink/v1/products/${id}`);
-  }
-
   async searchLinks(request: SearchLinkRequest): Promise<LinkListResponse> {
     return this._client.get('/tokenlink/v1/products/', request);
   }
