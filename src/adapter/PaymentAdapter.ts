@@ -16,7 +16,7 @@ import SearchCrossBookingsRequest from '../request/SearchCrossBookingsRequest';
 import SearchPaymentsRequest from '../request/SearchPaymentsRequest';
 import SearchPaymentTransactionRefundsRequest from '../request/SearchPaymentTransactionRefundsRequest';
 import SearchStoredCardsRequest from '../request/SearchStoredCardsRequest';
-import UpdatePaymentTransactionsRequest from '../request/UpdatePaymentTransactionsRequest';
+import UpdatePaymentTransactionRequest from '../request/UpdatePaymentTransactionRequest';
 
 import CrossBookingTransactionResponse from '../response/CrossBookingTransactionResponse';
 import DataResponse from '../response/DataResponse';
@@ -58,7 +58,7 @@ export default class PaymentAdapter extends BaseAdapter {
     return this._client.post('/payment/v1/payment-transactions/disapprove', request);
   }
 
-  async updatePaymentTransaction(id: number, request: UpdatePaymentTransactionsRequest): Promise<PaymentTransactionResponse> {
+  async updatePaymentTransaction(id: number, request: UpdatePaymentTransactionRequest): Promise<PaymentTransactionResponse> {
     return this._client.put(`/payment/v1/payment-transactions/${id}`, request);
   }
 
