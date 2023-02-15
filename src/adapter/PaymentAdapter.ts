@@ -8,6 +8,7 @@ import CrossBookingRequest from '../request/CrossBookingRequest';
 import DeleteStoredCardRequest from '../request/DeleteStoredCardRequest';
 import DisapprovePaymentTransactionsRequest from '../request/DisapprovePaymentTransactionsRequest';
 import InitCheckoutPaymentRequest from '../request/InitCheckoutPaymentRequest';
+import InitCreditPaymentRequest from '../request/InitCreditPaymentRequest';
 import InitThreeDsPaymentRequest from '../request/InitThreeDsPaymentRequest';
 import PostAuthPaymentRequest from '../request/PostAuthPaymentRequest';
 import RefundPaymentRequest from '../request/RefundPaymentRequest';
@@ -22,6 +23,7 @@ import CrossBookingTransactionResponse from '../response/CrossBookingTransaction
 import DataResponse from '../response/DataResponse';
 import InitCheckoutPaymentResponse from '../response/InitCheckoutPaymentResponse';
 import InitThreeDSPaymentResponse from '../response/InitThreeDSPaymentResponse';
+import InitCreditPaymentResponse from '../response/InitCreditPaymentResponse';
 import PaymentDetailResponse from '../response/PaymentDetailResponse';
 import PaymentRefundResponse from '../response/PaymentRefundResponse';
 import PaymentResponse from '../response/PaymentResponse';
@@ -72,6 +74,10 @@ export default class PaymentAdapter extends BaseAdapter {
 
   async initCheckoutPayment(request: InitCheckoutPaymentRequest): Promise<InitCheckoutPaymentResponse> {
     return this._client.post('/payment/v1/checkout-payments/init', request);
+  }
+
+  async initCreditPayment(request: InitCreditPaymentRequest): Promise<InitCreditPaymentResponse> {
+    return this._client.post('/payment/v1/credit-payments/init', request);
   }
 
   async retrieveCheckoutPayment(token: string): Promise<PaymentResponse> {
