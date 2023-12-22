@@ -30,7 +30,9 @@ const request = {
       price: 20.0,
       subMerchantId: 1
     }
-  ]
+  ],
+  productType: "16",
+  merchantBranchName: "branch-name",
 };
 
 tokenPay.payment().initCreditPayment(request)

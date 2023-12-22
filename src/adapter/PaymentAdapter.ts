@@ -34,6 +34,8 @@ import PaymentTransactionResponse from '../response/PaymentTransactionResponse';
 import StoredCardResponse from '../response/StoredCardResponse';
 
 import BaseAdapter from './BaseAdapter';
+import PreviewCreditPaymentRequest from '../request/PreviewCreditPaymentRequest';
+import PreviewCreditPaymentResponse from '../response/PreviewCreditPaymentResponse';
 
 export default class PaymentAdapter extends BaseAdapter {
   constructor(options: ClientCreationOptions) {
@@ -78,6 +80,10 @@ export default class PaymentAdapter extends BaseAdapter {
 
   async initCreditPayment(request: InitCreditPaymentRequest): Promise<InitCreditPaymentResponse> {
     return this._client.post('/payment/v1/credit-payments/init', request);
+  }
+
+  async previewCreditPayment(request: PreviewCreditPaymentRequest): Promise<PreviewCreditPaymentResponse> {
+    return this._client.post('/payment/v1/credit-payments/preview', request);
   }
 
   async retrieveCheckoutPayment(token: string): Promise<PaymentResponse> {
