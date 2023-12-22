@@ -1,6 +1,6 @@
 {
   "name": "@tokenpayeng/tokenpay",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "TokenPay API JavaScript Client",
   "main": "dist/index.js",
   "scripts": {
