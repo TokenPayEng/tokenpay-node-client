@@ -14,6 +14,8 @@ type InitCreditPaymentRequest = {
   checkoutFormToken: string;
   callbackUrl: string;
   creditorId: number;
+  merchantBranchName: string;
+  productType: string;
 };
 
 export default InitCreditPaymentRequest;
