@@ -137,4 +137,8 @@ export default class PaymentAdapter extends BaseAdapter {
   async postAuthPayment(paymentId: number, request: PostAuthPaymentRequest): Promise<PaymentResponse> {
     return this._client.post(`/payment/v1/card-payments/${paymentId}/post-auth`, request);
   }
+
+  async multiCardPostAuthPayment(conversationId: number, request: MultiCardPostAuthPaymentRequest): Promise<PaymentResponse> {
+    return this._client.post(`/payment/v1/card-payments/${conversationId}/multi_post-auth`, request);
+  }
 }
