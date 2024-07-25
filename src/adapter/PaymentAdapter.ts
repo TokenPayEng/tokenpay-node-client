@@ -11,6 +11,7 @@ import InitCheckoutPaymentRequest from '../request/InitCheckoutPaymentRequest';
 import InitCreditPaymentRequest from '../request/InitCreditPaymentRequest';
 import InitThreeDsPaymentRequest from '../request/InitThreeDsPaymentRequest';
 import PostAuthPaymentRequest from '../request/PostAuthPaymentRequest';
+import MultiCardPostAuthPaymentRequest from '../request/MultiCardPostAuthPaymentRequest';
 import RefundPaymentRequest from '../request/RefundPaymentRequest';
 import RefundPaymentTransactionRequest from '../request/RefundPaymentTransactionRequest';
 import SearchCrossBookingsRequest from '../request/SearchCrossBookingsRequest';
