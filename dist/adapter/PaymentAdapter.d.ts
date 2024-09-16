@@ -9,6 +9,7 @@ import DisapprovePaymentTransactionsRequest from '../request/DisapprovePaymentTr
 import InitCheckoutPaymentRequest from '../request/InitCheckoutPaymentRequest';
 import InitCreditPaymentRequest from '../request/InitCreditPaymentRequest';
 import InitThreeDsPaymentRequest from '../request/InitThreeDsPaymentRequest';
+import MoneyTransferPaymentRequest from '../request/MoneyTransferPaymentRequest';
 import PostAuthPaymentRequest from '../request/PostAuthPaymentRequest';
 import RefundPaymentRequest from '../request/RefundPaymentRequest';
 import RefundPaymentTransactionRequest from '../request/RefundPaymentTransactionRequest';
@@ -22,6 +23,8 @@ import DataResponse from '../response/DataResponse';
 import InitCheckoutPaymentResponse from '../response/InitCheckoutPaymentResponse';
 import InitThreeDSPaymentResponse from '../response/InitThreeDSPaymentResponse';
 import InitCreditPaymentResponse from '../response/InitCreditPaymentResponse';
+import MultiCardPostAuthPaymentRequest from '../request/MultiCardPostAuthPaymentRequest';
+import MoneyTransferPaymentResult from '../response/MoneyTransferPaymentResult';
 import PaymentDetailResponse from '../response/PaymentDetailResponse';
 import PaymentRefundResponse from '../response/PaymentRefundResponse';
 import PaymentResponse from '../response/PaymentResponse';
@@ -59,4 +62,6 @@ export default class PaymentAdapter extends BaseAdapter {
     deleteStoredCard(request: DeleteStoredCardRequest): Promise<void>;
     searchStoredCards(request: SearchStoredCardsRequest): Promise<DataResponse<StoredCardResponse>>;
     postAuthPayment(paymentId: number, request: PostAuthPaymentRequest): Promise<PaymentResponse>;
+    multiCardPostAuthPayment(conversationId: number, request: MultiCardPostAuthPaymentRequest): Promise<PaymentResponse>;
+    moneyTransferPayment(request: MoneyTransferPaymentRequest): Promise<MoneyTransferPaymentResult>;
 }
