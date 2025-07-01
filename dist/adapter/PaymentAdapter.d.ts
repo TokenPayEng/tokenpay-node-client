@@ -64,4 +64,6 @@ export default class PaymentAdapter extends BaseAdapter {
     postAuthPayment(paymentId: number, request: PostAuthPaymentRequest): Promise<PaymentResponse>;
     multiCardPostAuthPayment(conversationId: number, request: MultiCardPostAuthPaymentRequest): Promise<PaymentResponse>;
     moneyTransferPayment(request: MoneyTransferPaymentRequest): Promise<MoneyTransferPaymentResult>;
+    initWalletPayment(request: any): Promise<unknown>;
+    inquireWalletPayment(orderId: string): Promise<PaymentResponse>;
 }
