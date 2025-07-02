@@ -29,14 +29,14 @@ jobs:
           .github/scripts/pack-artifacts.sh
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: packed-library
           path: ${{ env.ARTIFACT_FILENAME }}
           if-no-files-found: error
 
       - name: Upload Runtime Check Script
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: runtime-check-script
           path: .github/scripts/check-runtime.js
@@ -64,13 +64,13 @@ jobs:
           npm init -y
 
       - name: Download Packed Library
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: packed-library
           path: /home/runner/work/tokenpay-node-client/check-runtime/
 
       - name: Download Runtime Check Script
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: runtime-check-script
           path: /home/runner/work/tokenpay-node-client/check-runtime/
