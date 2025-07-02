@@ -26,7 +26,7 @@ const tokenPay = new TokenPay.Client({
 ...
 ```
 
-By default the TokenPay client connects to the production API servers at `https://api-gateway.tokenpay.com.tr`. For testing purposes, please use the sandbox URL `https://sandbox-api-gateway.tokenpay.com.tr` using the .
+By default the TokenPay client connects to the production API servers at `https://api-gateway.oderopay.com.tr`. For testing purposes, please use the sandbox URL `https://sandbox-api-gateway.tokenpay.com.tr` using the .
 
 ```js
 const TokenPay = require('@tokenpayeng/tokenpay');

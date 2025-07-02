@@ -7,7 +7,7 @@ import {Currency, PaymentGroup} from '../../dist/model';
 const tokenPay = new TokenPayClient({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'https://api-gateway.tokenpay.com.tr'
+  baseUrl: 'https://api-gateway.oderopay.com.tr'
 });
 
 const request: CreatePaymentRequest = {

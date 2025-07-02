@@ -3,7 +3,7 @@ const TokenPay = require('../../dist');
 const tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'https://api-gateway.tokenpay.com.tr'
+  baseUrl: 'https://api-gateway.oderopay.com.tr'
 });
 
 tokenPay.payment().retrieveCheckoutPayment('fe4b0c2d-3c48-4553-9429-695d204bd7c1')
