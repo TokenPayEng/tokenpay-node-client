@@ -3,7 +3,7 @@ var TokenPay = require('../../dist');
 var tokenPay = new TokenPay.Client({
   apiKey: 'api-key',
   secretKey: 'secret-key',
-  baseUrl: 'https://api-gateway.tokenpay.com.tr'
+  baseUrl: 'https://api-gateway.oderopay.com.tr'
 });
 
 var request = {
