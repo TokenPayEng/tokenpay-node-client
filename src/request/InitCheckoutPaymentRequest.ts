@@ -16,6 +16,7 @@ type InitCheckoutPaymentRequest = {
   cardUserKey: string;
   conversationId: string;
   items: PaymentItem[];
+  expireAfterMinutes: number;
 };
 
 export default InitCheckoutPaymentRequest;

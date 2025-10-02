@@ -60,7 +60,7 @@ var AUTH_VERSION_HEADER_NAME = 'x-auth-version';
 var SIGNATURE_HEADER_NAME = 'x-signature';
 var HttpClient = /** @class */ (function () {
     function HttpClient(_a) {
-        var _b = _a === void 0 ? {} : _a, apiKey = _b.apiKey, secretKey = _b.secretKey, _c = _b.baseUrl, baseUrl = _c === void 0 ? 'https://api-gateway.tokenpay.com.tr' : _c;
+        var _b = _a === void 0 ? {} : _a, apiKey = _b.apiKey, secretKey = _b.secretKey, _c = _b.baseUrl, baseUrl = _c === void 0 ? 'https://api-gateway.oderopay.com.tr' : _c;
         this._options = { apiKey: apiKey, secretKey: secretKey, baseUrl: baseUrl };
         this._client = axios_1.default.create({ baseURL: baseUrl });
         this._client.interceptors.request.use(this._injectHeaders.bind(this));
