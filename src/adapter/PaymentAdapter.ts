@@ -52,8 +52,12 @@ export default class PaymentAdapter extends BaseAdapter {
     return this._client.post('/payment/v1/card-payments', request);
   }
 
-  async retrievePayment(id: number): Promise<PaymentDetailResponse> {
+  async retrievePaymentDetail(id: number): Promise<PaymentDetailResponse> {
     return this._client.get(`/payment-reporting/v1/payments/${id}`);
+  }
+
+  async retrievePayment(id: number): Promise<PaymentResponse> {
+    return this._client.get(`/payment/v1/card-payments/${id}`);
   }
 
   async searchPayments(request: SearchPaymentsRequest): Promise<DataResponse<PaymentDetailResponse>> {
